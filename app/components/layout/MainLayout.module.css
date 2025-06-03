@@ -1,0 +1,32 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1;
+  padding: 40px;
+  margin-left: 240px;
+}
+
+.header {
+  margin-bottom: 40px;
+}
+
+.title {
+  font: var(--font-title-page);
+  letter-spacing: var(--letter-spacing-title-page);
+  margin-bottom: 12px;
+}
+
+.description {
+  font: var(--font-body-base);
+  color: #666;
+  max-width: 600px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .description {
+    color: #999;
+  }
+} 

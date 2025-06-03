@@ -1,0 +1,49 @@
+.card {
+  /* Base card styles */
+  padding: var(--sds-size-space-400);
+  border-radius: var(--sds-size-radius-200);
+  background: var(--surface-background);
+  position: relative;
+  z-index: var(--sds-size-depth-0);
+}
+
+/* Card variants */
+.elevated {
+  box-shadow: 0 var(--sds-size-depth-100) var(--sds-size-blur-100) rgba(0, 0, 0, 0.1);
+}
+
+.interactive {
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.interactive:hover {
+  transform: translateY(var(--sds-size-space-negative-100));
+  box-shadow: 0 var(--sds-size-depth-200) var(--sds-size-blur-100) rgba(0, 0, 0, 0.15);
+}
+
+/* Spacing variants */
+.compact {
+  padding: var(--sds-size-space-300);
+}
+
+.spacious {
+  padding: var(--sds-size-space-600);
+}
+
+/* Content spacing */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sds-size-space-400);
+}
+
+.header {
+  margin-bottom: var(--sds-size-space-300);
+}
+
+.footer {
+  margin-top: var(--sds-size-space-300);
+  padding-top: var(--sds-size-space-300);
+  border-top: var(--sds-size-stroke-border) solid var(--border-default);
+} 
