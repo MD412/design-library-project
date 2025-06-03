@@ -3,7 +3,7 @@
   background: var(--surface-background);
   color: var(--text-primary);
   padding: var(--sds-size-space-600);
-  max-width: 1400px;
+  max-width: none;
   margin: 0 auto;
   border-radius: var(--sds-size-radius-200);
 }
