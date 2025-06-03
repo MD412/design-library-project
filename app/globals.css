@@ -421,6 +421,93 @@
   --focus-ring: var(--color-blue-200);
 }
 
+/* ===== ROOT THEME (Light Mode Default) ===== */
+:root {
+  /* A. Core Page Semantics */
+  --background: var(--color-white-1000);
+  --foreground: var(--color-gray-900);
+
+  /* B. Surface Colors */
+  --surface-background: var(--color-gray-50);
+  --surface-background-hover: var(--color-gray-100);
+  --surface-background-pressed: var(--color-gray-200);
+  --surface-background-subtle: var(--color-gray-100);
+  --surface-background-muted: var(--color-gray-200);
+  --surface-background-emphasis: var(--color-gray-900);
+  --surface-background-disabled: var(--color-gray-100);
+  --surface-container-level-1: var(--color-gray-100);
+  --surface-preview-background: var(--color-gray-100);
+
+  /* C. Text Colors */
+  --text-primary: var(--color-gray-900);
+  --text-secondary: var(--color-gray-600);
+  --text-tertiary: var(--color-gray-500);
+  --text-disabled: var(--color-gray-400);
+  --text-inverse: var(--color-gray-50);
+  --text-brand: var(--color-blue-600);
+  --text-error: var(--color-red-600);
+  --text-success: var(--color-green-600);
+  --text-warning: var(--color-yellow-600);
+  
+  /* D. Border Colors */
+  --border-default: var(--color-gray-200);
+  --border-hover: var(--color-gray-300);
+  --border-focus: var(--color-blue-600);
+  --border-error: var(--color-red-300);
+  --border-success: var(--color-green-300);
+  --border-disabled: var(--color-gray-200);
+  --border-interactive-primary: var(--interactive-primary);
+  --border-interactive-secondary: var(--color-gray-300);
+
+  /* E. Interactive Element Colors */
+  --interactive-primary: var(--color-blue-600);
+  --interactive-primary-hover: var(--color-blue-700);
+  --interactive-primary-pressed: var(--color-blue-800);
+  --interactive-primary-disabled: var(--color-blue-200);
+  
+  --interactive-secondary: var(--color-gray-100);
+  --interactive-secondary-hover: var(--color-gray-200);
+  --interactive-secondary-pressed: var(--color-gray-300);
+  --interactive-secondary-disabled: var(--color-gray-100);
+
+  /* F. Status Colors */
+  --status-error: var(--color-red-500);
+  --status-error-subtle: var(--color-red-100);
+  --status-success: var(--color-green-500);
+  --status-success-subtle: var(--color-green-100);
+  --status-warning: var(--color-yellow-500);
+  --status-warning-subtle: var(--color-yellow-100);
+  --status-info: var(--color-blue-500);
+  --status-info-subtle: var(--color-blue-100);
+
+  /* G. Focus Indicator Colors */
+  --focus-ring: var(--color-blue-200);
+
+  /* H. Overlay Colors */
+  --overlay-background: var(--color-black-300);
+  --overlay-hover: var(--color-black-400);
+
+  /* I. Typography */
+  --font-family-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-family-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+
+  --font-title-hero: 600 48px/1.2 var(--font-family-sans);
+  --font-title-page: 600 36px/1.2 var(--font-family-sans);
+  --font-subtitle: 400 24px/1.3 var(--font-family-sans);
+  --font-heading: 600 20px/1.3 var(--font-family-sans);
+  --font-subheading: 600 16px/1.4 var(--font-family-sans);
+  --font-body-base: 400 16px/1.5 var(--font-family-sans);
+  --font-body-strong: 600 16px/1.5 var(--font-family-sans);
+  --font-body-small: 400 14px/1.5 var(--font-family-sans);
+  --font-body-small-strong: 600 14px/1.5 var(--font-family-sans);
+  --font-body-code: 400 14px/1.5 var(--font-family-mono);
+  --font-input: 400 16px/1.5 var(--font-family-sans);
+
+  --letter-spacing-title-hero: -0.02em;
+  --letter-spacing-title-page: -0.015em;
+  --letter-spacing-heading: -0.01em;
+}
+
 /* ===== OS DARK MODE (uses :root, prefers-color-scheme) ===== */
 @media (prefers-color-scheme: dark) {
   :root { /* Overrides for OS-level dark mode preference */
@@ -582,6 +669,73 @@ a {
 
 .body-small-strong-single {
   font: var(--font-body-small-strong-single);
+}
+
+/* ===== THEME: LIGHT ===== */
+[data-theme='light'] {
+  /* A. Core Page Semantics */
+  --background: var(--color-white-1000);
+  --foreground: var(--color-gray-900);
+
+  /* B. Surface Colors */
+  --surface-background: var(--color-gray-50);
+  --surface-background-hover: var(--color-gray-100);
+  --surface-background-pressed: var(--color-gray-200);
+  --surface-background-subtle: var(--color-gray-100);
+  --surface-background-muted: var(--color-gray-200);
+  --surface-background-emphasis: var(--color-gray-900);
+  --surface-background-disabled: var(--color-gray-100);
+  --surface-container-level-1: var(--color-gray-100);
+  --surface-preview-background: var(--color-gray-100);
+
+  /* C. Text Colors */
+  --text-primary: var(--color-gray-900);
+  --text-secondary: var(--color-gray-600);
+  --text-tertiary: var(--color-gray-500);
+  --text-disabled: var(--color-gray-400);
+  --text-inverse: var(--color-gray-50);
+  --text-brand: var(--color-blue-600);
+  --text-error: var(--color-red-600);
+  --text-success: var(--color-green-600);
+  --text-warning: var(--color-yellow-600);
+  
+  /* D. Border Colors */
+  --border-default: var(--color-gray-200);
+  --border-hover: var(--color-gray-300);
+  --border-focus: var(--color-blue-600);
+  --border-error: var(--color-red-300);
+  --border-success: var(--color-green-300);
+  --border-disabled: var(--color-gray-200);
+  --border-interactive-primary: var(--interactive-primary);
+  --border-interactive-secondary: var(--color-gray-300);
+
+  /* E. Interactive Element Colors */
+  --interactive-primary: var(--color-blue-600);
+  --interactive-primary-hover: var(--color-blue-700);
+  --interactive-primary-pressed: var(--color-blue-800);
+  --interactive-primary-disabled: var(--color-blue-200);
+  
+  --interactive-secondary: var(--color-gray-100);
+  --interactive-secondary-hover: var(--color-gray-200);
+  --interactive-secondary-pressed: var(--color-gray-300);
+  --interactive-secondary-disabled: var(--color-gray-100);
+
+  /* F. Status Colors */
+  --status-error: var(--color-red-500);
+  --status-error-subtle: var(--color-red-100);
+  --status-success: var(--color-green-500);
+  --status-success-subtle: var(--color-green-100);
+  --status-warning: var(--color-yellow-500);
+  --status-warning-subtle: var(--color-yellow-100);
+  --status-info: var(--color-blue-500);
+  --status-info-subtle: var(--color-blue-100);
+
+  /* G. Focus Indicator Colors */
+  --focus-ring: var(--color-blue-200);
+
+  /* H. Overlay Colors */
+  --overlay-background: var(--color-black-300);
+  --overlay-hover: var(--color-black-400);
 }
 
 /* ===== THEME: DARK ===== */

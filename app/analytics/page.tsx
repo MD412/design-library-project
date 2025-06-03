@@ -50,7 +50,6 @@ export default function AnalyticsDashboard() {
               change={{ value: "+8.1%", type: "positive" }}
               subtitle="daily active users"
               icon="👥"
-              variant="highlighted"
             />
             
             <MetricCard
@@ -120,7 +119,7 @@ export default function AnalyticsDashboard() {
                 max={100}
                 variant="warning"
                 showValue={true}
-                size="large"
+                striped={true}
               />
             </div>
             

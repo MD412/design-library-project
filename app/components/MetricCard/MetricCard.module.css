@@ -1,6 +1,6 @@
 .card {
   /* Base card structure */
-  background: var(--surface-background-subtle);
+  background: var(--surface-preview-background);
   border: var(--sds-size-stroke-border) solid var(--border-default);
   border-radius: var(--sds-size-radius-200);
   padding: var(--sds-size-space-600);
@@ -36,8 +36,6 @@
   justify-content: center;
   width: var(--sds-size-icon-medium);
   height: var(--sds-size-icon-medium);
-  background: var(--surface-background-muted);
-  border-radius: var(--sds-size-radius-100);
   margin-bottom: var(--sds-size-space-400);
   color: var(--text-primary);
 }

@@ -5,8 +5,8 @@ import styles from './ThemeSwitcher.module.css';
 
 const themes = [
   {
-    id: 'default',
-    name: 'Default theme',
+    id: 'light',
+    name: 'Light theme',
     topColor: '#6677e6', // Default brand blue
     bottomColor: '#ffffff' // White
   },

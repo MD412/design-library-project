@@ -8,7 +8,7 @@ interface ThemeContextType {
 }
 
 const ThemeContext = createContext<ThemeContextType>({
-  theme: 'default',
+  theme: 'light',
   setTheme: () => {},
 });
 
@@ -17,7 +17,7 @@ export function useTheme() {
 }
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState('default');
+  const [theme, setTheme] = useState('light');
 
   useEffect(() => {
     // Load theme from localStorage if available

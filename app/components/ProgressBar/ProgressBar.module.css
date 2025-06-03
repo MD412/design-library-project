@@ -30,6 +30,7 @@
   border-radius: var(--sds-size-radius-full);
   overflow: hidden;
   position: relative;
+  display: flex;
 }
 
 /* Track sizes */
@@ -51,43 +52,24 @@
   border-radius: var(--sds-size-radius-full);
   transition: width 0.3s ease;
   position: relative;
-}
-
-/* Fill variants using correct semantic tokens */
-.default {
   background: var(--interactive-primary);
 }
 
-.success {
-  background: var(--status-success);
+/* Fill variants */
+.warning {
+  background-color: var(--status-warning);
 }
 
-.warning {
-  background: var(--status-warning);
+.success {
+  background-color: var(--status-success);
 }
 
 .critical {
-  background: var(--status-error);
+  background-color: var(--status-error);
 }
 
 .accent {
-  background: var(--interactive-primary-hover);
-}
-
-/* Animated fill */
-.animated {
-  background-image: linear-gradient(
-    45deg,
-    rgba(255, 255, 255, 0.1) 25%,
-    transparent 25%,
-    transparent 50%,
-    rgba(255, 255, 255, 0.1) 50%,
-    rgba(255, 255, 255, 0.1) 75%,
-    transparent 75%,
-    transparent
-  );
-  background-size: var(--sds-size-space-400) var(--sds-size-space-400);
-  animation: progressStripes 1s linear infinite;
+  background-color: var(--interactive-primary-hover);
 }
 
 /* Striped pattern */
@@ -131,8 +113,4 @@
   }
 }
 
-/* Focus styles for accessibility */
-.fill:focus {
-  outline: var(--sds-size-stroke-focus-ring) solid var(--border-focus);
-  outline-offset: var(--sds-size-space-100);
-} 
+/* Removing focus styles to test if they're causing the height issue */ 
