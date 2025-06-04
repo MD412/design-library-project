@@ -1,0 +1,44 @@
+/* Semantic Typography Tokens */
+@import '../primitives/typography.css';
+
+:root {
+  /* Display Typography */
+  --typography-display-large: var(--font-weight-bold) var(--font-size-1000)/var(--line-height-tight) var(--font-family-display);
+  --typography-display-medium: var(--font-weight-bold) var(--font-size-900)/var(--line-height-tight) var(--font-family-display);
+  --typography-display-small: var(--font-weight-bold) var(--font-size-800)/var(--line-height-tight) var(--font-family-display);
+
+  /* Heading Typography */
+  --typography-heading-1: var(--font-weight-bold) var(--font-size-700)/var(--line-height-tight) var(--font-family-sans);
+  --typography-heading-2: var(--font-weight-semibold) var(--font-size-600)/var(--line-height-tight) var(--font-family-sans);
+  --typography-heading-3: var(--font-weight-semibold) var(--font-size-500)/var(--line-height-snug) var(--font-family-sans);
+  --typography-heading-4: var(--font-weight-semibold) var(--font-size-400)/var(--line-height-snug) var(--font-family-sans);
+  --typography-heading-5: var(--font-weight-semibold) var(--font-size-300)/var(--line-height-snug) var(--font-family-sans);
+  --typography-heading-6: var(--font-weight-semibold) var(--font-size-200)/var(--line-height-snug) var(--font-family-sans);
+
+  /* Body Typography */
+  --typography-body-large: var(--font-weight-regular) var(--font-size-200)/var(--line-height-normal) var(--font-family-sans);
+  --typography-body-medium: var(--font-weight-regular) var(--font-size-100)/var(--line-height-normal) var(--font-family-sans);
+  --typography-body-small: var(--font-weight-regular) var(--font-size-75)/var(--line-height-normal) var(--font-family-sans);
+
+  /* UI Typography */
+  --typography-ui-large: var(--font-weight-medium) var(--font-size-100)/var(--line-height-snug) var(--font-family-sans);
+  --typography-ui-medium: var(--font-weight-medium) var(--font-size-75)/var(--line-height-snug) var(--font-family-sans);
+  --typography-ui-small: var(--font-weight-medium) var(--font-size-50)/var(--line-height-snug) var(--font-family-sans);
+
+  /* Code Typography */
+  --typography-code-large: var(--font-weight-regular) var(--font-size-100)/var(--line-height-normal) var(--font-family-mono);
+  --typography-code-medium: var(--font-weight-regular) var(--font-size-75)/var(--line-height-normal) var(--font-family-mono);
+  --typography-code-small: var(--font-weight-regular) var(--font-size-50)/var(--line-height-normal) var(--font-family-mono);
+
+  /* Special Cases */
+  --typography-caption: var(--font-weight-regular) var(--font-size-50)/var(--line-height-snug) var(--font-family-sans);
+  --typography-overline: var(--font-weight-medium) var(--font-size-50)/var(--line-height-snug) var(--font-family-sans);
+  --typography-label: var(--font-weight-medium) var(--font-size-75)/var(--line-height-snug) var(--font-family-sans);
+
+  /* Letter Spacing Contexts */
+  --letter-spacing-heading: var(--letter-spacing-tight);
+  --letter-spacing-body: var(--letter-spacing-normal);
+  --letter-spacing-caption: var(--letter-spacing-wide);
+  --letter-spacing-overline: var(--letter-spacing-widest);
+  --letter-spacing-button: var(--letter-spacing-wide);
+} 

@@ -1,0 +1,56 @@
+/* Dark Theme */
+@import '../tokens/semantic/colors.css';
+
+[data-theme='dark'] {
+  /* Surface Colors */
+  --surface-background: var(--color-gray-900);
+  --surface-background-hover: var(--color-gray-800);
+  --surface-background-active: var(--color-gray-700);
+  --surface-background-selected: var(--color-gray-700);
+  --surface-background-disabled: var(--color-gray-800);
+  
+  --surface-overlay: var(--color-white-500);
+  --surface-overlay-hover: var(--color-white-600);
+  
+  /* Text Colors */
+  --text-primary: var(--color-gray-50);
+  --text-secondary: var(--color-gray-300);
+  --text-tertiary: var(--color-gray-500);
+  --text-disabled: var(--color-gray-600);
+  --text-inverse: var(--color-gray-900);
+  
+  /* Interactive Colors */
+  --interactive-primary: var(--color-brand-400);
+  --interactive-primary-hover: var(--color-brand-300);
+  --interactive-primary-active: var(--color-brand-200);
+  --interactive-primary-disabled: var(--color-brand-800);
+  
+  --interactive-secondary: var(--color-gray-300);
+  --interactive-secondary-hover: var(--color-gray-200);
+  --interactive-secondary-active: var(--color-gray-100);
+  --interactive-secondary-disabled: var(--color-gray-700);
+  
+  /* Border Colors */
+  --border-default: var(--color-gray-700);
+  --border-hover: var(--color-gray-600);
+  --border-active: var(--color-gray-500);
+  --border-focus: var(--color-brand-400);
+  --border-disabled: var(--color-gray-800);
+  
+  /* Status Colors - Adjusted for dark theme visibility */
+  --status-error: var(--color-red-400);
+  --status-error-surface: var(--color-red-900);
+  --status-error-border: var(--color-red-700);
+  
+  --status-success: var(--color-green-400);
+  --status-success-surface: var(--color-green-900);
+  --status-success-border: var(--color-green-700);
+  
+  --status-warning: var(--color-yellow-400);
+  --status-warning-surface: var(--color-yellow-900);
+  --status-warning-border: var(--color-yellow-700);
+  
+  --status-info: var(--color-blue-400);
+  --status-info-surface: var(--color-blue-900);
+  --status-info-border: var(--color-blue-700);
+} 

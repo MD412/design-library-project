@@ -1,0 +1,56 @@
+/* Semantic Color Tokens */
+@import '../primitives/colors.css';
+
+:root {
+  /* Surface Colors */
+  --surface-background: var(--color-white-1000);
+  --surface-background-hover: var(--color-gray-50);
+  --surface-background-active: var(--color-gray-100);
+  --surface-background-selected: var(--color-gray-100);
+  --surface-background-disabled: var(--color-gray-50);
+  
+  --surface-overlay: var(--color-black-500);
+  --surface-overlay-hover: var(--color-black-600);
+  
+  /* Text Colors */
+  --text-primary: var(--color-gray-900);
+  --text-secondary: var(--color-gray-600);
+  --text-tertiary: var(--color-gray-400);
+  --text-disabled: var(--color-gray-300);
+  --text-inverse: var(--color-white-1000);
+  
+  /* Interactive Colors */
+  --interactive-primary: var(--color-brand-600);
+  --interactive-primary-hover: var(--color-brand-700);
+  --interactive-primary-active: var(--color-brand-800);
+  --interactive-primary-disabled: var(--color-brand-200);
+  
+  --interactive-secondary: var(--color-gray-600);
+  --interactive-secondary-hover: var(--color-gray-700);
+  --interactive-secondary-active: var(--color-gray-800);
+  --interactive-secondary-disabled: var(--color-gray-200);
+  
+  /* Border Colors */
+  --border-default: var(--color-gray-200);
+  --border-hover: var(--color-gray-300);
+  --border-active: var(--color-gray-400);
+  --border-focus: var(--color-brand-500);
+  --border-disabled: var(--color-gray-100);
+  
+  /* Status Colors */
+  --status-error: var(--color-red-500);
+  --status-error-surface: var(--color-red-50);
+  --status-error-border: var(--color-red-200);
+  
+  --status-success: var(--color-green-500);
+  --status-success-surface: var(--color-green-50);
+  --status-success-border: var(--color-green-200);
+  
+  --status-warning: var(--color-yellow-500);
+  --status-warning-surface: var(--color-yellow-50);
+  --status-warning-border: var(--color-yellow-200);
+  
+  --status-info: var(--color-blue-500);
+  --status-info-surface: var(--color-blue-50);
+  --status-info-border: var(--color-blue-200);
+} 

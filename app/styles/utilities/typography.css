@@ -1,0 +1,114 @@
+/* Typography Utility Classes */
+@import '../tokens/semantic/typography.css';
+
+/* Display Classes */
+.display-large {
+  font: var(--typography-display-large);
+  letter-spacing: var(--letter-spacing-heading);
+}
+
+.display-medium {
+  font: var(--typography-display-medium);
+  letter-spacing: var(--letter-spacing-heading);
+}
+
+.display-small {
+  font: var(--typography-display-small);
+  letter-spacing: var(--letter-spacing-heading);
+}
+
+/* Heading Classes */
+.heading-1 {
+  font: var(--typography-heading-1);
+  letter-spacing: var(--letter-spacing-heading);
+}
+
+.heading-2 {
+  font: var(--typography-heading-2);
+  letter-spacing: var(--letter-spacing-heading);
+}
+
+.heading-3 {
+  font: var(--typography-heading-3);
+  letter-spacing: var(--letter-spacing-heading);
+}
+
+.heading-4 {
+  font: var(--typography-heading-4);
+  letter-spacing: var(--letter-spacing-heading);
+}
+
+.heading-5 {
+  font: var(--typography-heading-5);
+  letter-spacing: var(--letter-spacing-heading);
+}
+
+.heading-6 {
+  font: var(--typography-heading-6);
+  letter-spacing: var(--letter-spacing-heading);
+}
+
+/* Body Classes */
+.body-large {
+  font: var(--typography-body-large);
+  letter-spacing: var(--letter-spacing-body);
+}
+
+.body-medium {
+  font: var(--typography-body-medium);
+  letter-spacing: var(--letter-spacing-body);
+}
+
+.body-small {
+  font: var(--typography-body-small);
+  letter-spacing: var(--letter-spacing-body);
+}
+
+/* UI Classes */
+.ui-large {
+  font: var(--typography-ui-large);
+  letter-spacing: var(--letter-spacing-button);
+}
+
+.ui-medium {
+  font: var(--typography-ui-medium);
+  letter-spacing: var(--letter-spacing-button);
+}
+
+.ui-small {
+  font: var(--typography-ui-small);
+  letter-spacing: var(--letter-spacing-button);
+}
+
+/* Code Classes */
+.code-large {
+  font: var(--typography-code-large);
+  letter-spacing: var(--letter-spacing-normal);
+}
+
+.code-medium {
+  font: var(--typography-code-medium);
+  letter-spacing: var(--letter-spacing-normal);
+}
+
+.code-small {
+  font: var(--typography-code-small);
+  letter-spacing: var(--letter-spacing-normal);
+}
+
+/* Special Classes */
+.caption {
+  font: var(--typography-caption);
+  letter-spacing: var(--letter-spacing-caption);
+}
+
+.overline {
+  font: var(--typography-overline);
+  letter-spacing: var(--letter-spacing-overline);
+  text-transform: uppercase;
+}
+
+.label {
+  font: var(--typography-label);
+  letter-spacing: var(--letter-spacing-button);
+} 

@@ -1,3 +1,15 @@
+/* Import design tokens */
+@import './styles/tokens/primitives/colors.css';
+@import './styles/tokens/semantic/colors.css';
+@import './styles/tokens/primitives/typography.css';
+@import './styles/tokens/semantic/typography.css';
+
+/* Import utility classes */
+@import './styles/utilities/typography.css';
+
+/* Import themes */
+@import './styles/themes/dark.css';
+
 /* ===== GLOBAL STYLES ===== */
 
 :root {
