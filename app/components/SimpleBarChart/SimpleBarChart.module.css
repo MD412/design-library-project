@@ -1,0 +1,252 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sds-size-space-400);
+  flex: 1;
+}
+
+.title {
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.chart {
+  display: flex;
+  gap: var(--sds-size-space-300);
+  padding: var(--sds-size-space-400);
+  background: var(--surface-background-subtle);
+  border-radius: var(--sds-size-radius-200);
+  border: var(--sds-size-stroke-border) solid var(--border-default);
+  flex: 1;
+  min-height: 0;
+  padding-top: var(--sds-size-space-800);
+}
+
+/* Chart orientations */
+.vertical {
+  align-items: flex-end;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.horizontal {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* Chart variants */
+.minimal {
+  background: transparent;
+  border: none;
+  padding: var(--sds-size-space-200);
+}
+
+.rounded .bar {
+  border-radius: var(--sds-size-radius-100);
+}
+
+.rounded.horizontal .bar {
+  border-radius: var(--sds-size-radius-200);
+}
+
+/* Bar container */
+.barContainer {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+}
+
+.vertical .barContainer {
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sds-size-space-200);
+  height: 100%;
+  justify-content: flex-end;
+  min-height: 0;
+}
+
+.horizontal .barContainer {
+  flex-direction: row;
+  align-items: center;
+  gap: var(--sds-size-space-300);
+  min-height: var(--sds-size-space-800);
+}
+
+/* Bars */
+.bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  min-height: var(--sds-size-space-100);
+  min-width: var(--sds-size-space-100);
+  order: 0;
+}
+
+.vertical .bar {
+  width: 100%;
+  max-width: 60px;
+  align-items: flex-end;
+  padding-bottom: var(--sds-size-space-150);
+  height: var(--bar-height);
+}
+
+.horizontal .bar {
+  height: var(--sds-size-space-600);
+  align-items: center;
+  padding-left: var(--sds-size-space-200);
+  padding-right: var(--sds-size-space-200);
+}
+
+/* Bar colors using correct semantic tokens */
+.default {
+  background: var(--interactive-primary);
+}
+
+.success {
+  background: var(--status-success);
+}
+
+.warning {
+  background: var(--status-warning);
+}
+
+.critical {
+  background: var(--status-error);
+}
+
+.accent {
+  background: var(--interactive-secondary);
+}
+
+.neutral {
+  background: var(--text-tertiary);
+}
+
+/* Bar animations */
+.animated {
+  animation: barGrow 0.6s ease-out;
+}
+
+.vertical.animated .bar {
+  animation: barGrowVertical 0.6s ease-out;
+}
+
+.horizontal.animated .bar {
+  animation: barGrowHorizontal 0.6s ease-out;
+}
+
+/* Value labels */
+.value {
+  color: var(--text-primary);
+  text-shadow: none;
+  font-size: 11px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: absolute;
+  top: -24px;
+}
+
+.horizontal .value {
+  position: static;
+  height: 100%;
+  top: auto;
+  color: var(--text-inverse);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Label container */
+.labelContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vertical .labelContainer {
+  text-align: center;
+  min-height: var(--sds-size-space-600);
+  order: 1;
+}
+
+.horizontal .labelContainer {
+  min-width: 80px;
+  justify-content: flex-start;
+}
+
+.label {
+  color: var(--text-secondary);
+  text-align: center;
+  line-height: 1.2;
+  word-break: break-word;
+}
+
+.horizontal .label {
+  text-align: left;
+}
+
+/* Hover effects */
+.bar:hover {
+  filter: brightness(1.1);
+  transform: scale(1.02);
+}
+
+.vertical .bar:hover {
+  transform: scaleY(1.05) scaleX(1.02);
+}
+
+.horizontal .bar:hover {
+  transform: scaleX(1.02) scaleY(1.05);
+}
+
+/* Animations */
+@keyframes barGrowVertical {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--final-height, 100%);
+  }
+}
+
+@keyframes barGrowHorizontal {
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--final-width, 100%);
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .bar {
+    transition: none;
+    animation: none;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+  .chart {
+    gap: var(--sds-size-space-200);
+    padding: var(--sds-size-space-300);
+  }
+  
+  .vertical .bar {
+    max-width: 40px;
+  }
+  
+  .horizontal .labelContainer {
+    min-width: 60px;
+  }
+  
+  .label {
+    font-size: 12px;
+  }
+} 

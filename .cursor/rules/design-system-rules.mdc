@@ -1,0 +1,160 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+You are helping me build a design system by converting Figma designs to code components. This repository will house reusable components and a component library for documentation.
+
+Project structure:
+- Next.js project with all code in the app/ folder (no src/ folder)
+- Components should be in app/components/ organized by category (e.g., inputs, layout, feedback)
+- All design tokens (colors (both primitives and semantic), typography, spacing, shadows) defined as CSS variables in app/globals.css
+- Reuse existing design tokens and components whenever possible
+- Use CSS modules for all component styling (no Tailwind or styled-components)
+
+When creating a new component:
+- Check if related design tokens already exist in app/globals.css
+- Reference global CSS variables in your component CSS modules
+- Create a clean, reusable interface with appropriate props
+- Document the component usage with examples
+- Add the component to the design system library page
+
+For design system implementation:
+1. First, extract and implement foundational elements (colors, typography, spacing) from Figma to app/globals.css
+2. Then build basic components using these variables
+3. Finally, assemble more complex components from the basic building blocks
+
+For design system library documentation:
+- Each component should have its own section in the library
+- Include a visual example of the component with variations
+- Provide usage code snippets
+- Document available props and their usage
+- Group related components together (e.g., form elements, navigation)
+Documentation and navigation requirements:
+1. Create a dedicated documentation page for each new component:
+   - Place it in app/<component-category>/page.tsx
+   - Include examples, variants, states, and usage guidelines
+   - Follow the established documentation page structure
+
+2. Add the component to the sidebar navigation:
+   - Add a new Link in app/components/Navigation.tsx
+   - Use sentence case for the link text
+   - Maintain alphabetical order within component categories
+
+3. Add the component to the homepage:
+   - Create a preview section in app/page.tsx
+   - Include a brief description and key examples
+   - Group with similar components
+
+4. Component documentation structure:
+   - Title and description
+   - Visual examples of variants
+   - Usage code snippets
+   - Props documentation
+   - Best practices and guidelines
+
+Example workflow for adding a new component:
+1. Create the component file in app/components/<category>/<ComponentName>.tsx
+2. Create the component's CSS module in app/components/<category>/<ComponentName>.module.css
+3. Create the documentation page in app/<component-category>/page.tsx
+4. Add navigation link in app/components/Navigation.tsx
+5. Add component preview to the homepage
+6. Update any related design tokens in app/globals.css if needed
+
+Documentation Standards:
+1. Use the DocsLayout components for all documentation pages:
+   ```tsx
+   import DocsLayout, { DocsSection, DocsExample } from '../components/layout/DocsLayout';
+
+   export default function ComponentDocumentation() {
+     return (
+       <DocsLayout
+         title="Component Name"
+         description="Clear, concise description of the component's purpose."
+       >
+         <DocsSection title="Variants">
+           <DocsExample
+             title="Variant Name"
+             description="When and how to use this variant"
+             preview={<ComponentPreview />}
+             code="<Component variant='example'>Example</Component>"
+           />
+         </DocsSection>
+       </DocsLayout>
+     );
+   }
+   ```
+
+2. Documentation Structure:
+   - Title: Clear, concise component name
+   - Description: 1-2 sentences explaining the component's purpose
+   - Sections: Group related examples (variants, sizes, states)
+   - Examples: Show the component in use with:
+     * Visual preview
+     * Usage description
+     * Code snippet
+     * Additional context if needed
+
+3. Visual Hierarchy:
+   - Use consistent spacing from design tokens
+   - Maintain clear section separation
+   - Show interactive states where applicable
+   - Use subtle backgrounds for preview areas
+   - Format code snippets consistently
+
+4. Content Guidelines:
+   - Write clear, actionable descriptions
+   - Explain when and why to use each variant
+   - Include best practices and guidelines
+   - Show common use cases and combinations
+   - Document all props and customization options
+
+5. Accessibility:
+   - Document accessibility features
+   - Include keyboard interaction patterns
+   - Note ARIA attributes and roles
+   - Provide screen reader considerations
+
+Example Documentation Sections:
+1. Overview
+   - Component description
+   - Key features
+   - When to use
+
+2. Variants
+   - Primary use cases
+   - Visual examples
+   - Code snippets
+
+3. Props & Customization
+   - Available props
+   - Default values
+   - Custom styling
+
+4. Accessibility
+   - Keyboard support
+   - Screen reader support
+   - Best practices
+
+5. Examples
+   - Common use cases
+   - Complex implementations
+   - Integration examples
+
+## Design Tokens & Theming (`app/globals.css`)
+
+### Token Philosophy
+- **Primitive Tokens:** Raw, uncontextual values (e.g., `--color-blue-500: #3B82F6;`, `--sds-size-space-100: 4px;`).
+- **Semantic Tokens:** Contextual application of primitives (e.g., `--text-interactive: var(--color-blue-500);`, `--padding-button: var(--sds-size-space-200);`). These form the "Theme Contract".
+- **Components Use Semantics:** All components MUST style themselves using only Semantic Tokens.
+
+### `:root` (Default Theme & Contract Definition)
+- Group Primitives first (Colors, Spacing, Typography Primitives).
+- Then, group Semantic Tokens (Surface, Text, Border, etc.). Keep this order consistent.
+
+### Theme Blocks (`[data-theme='...']`)
+- Each theme block MUST redefine ALL Semantic Tokens from the `:root` contract.
+- Themes MAY introduce local primitive palettes but MUST map them to the standard Semantic Tokens.
+- Maintain the same order of redefinitions as in `:root`.
+
+

@@ -1,0 +1,308 @@
+/* Gaming Demo Page Styles */
+
+.dashboard {
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+.dashboardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--sds-size-space-600);
+  padding-bottom: var(--sds-size-space-400);
+  border-bottom: var(--sds-size-stroke-border) solid var(--border-default);
+}
+
+.stats {
+  display: flex;
+  gap: var(--sds-size-space-400);
+  margin-bottom: var(--sds-size-space-600);
+  flex-wrap: wrap;
+}
+
+.statItem {
+  flex: 1;
+  min-width: 120px;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--sds-size-space-600);
+  padding: var(--sds-size-space-400);
+}
+
+.cardItem {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface-card-background);
+  border: var(--sds-size-stroke-border) solid var(--border-card-default);
+  border-radius: var(--sds-size-radius-200);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.cardItem:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  border-color: var(--border-card-hover);
+}
+
+.cardImageWrapper {
+  position: relative;
+  width: 100%;
+  border-radius: var(--sds-size-radius-100);
+  overflow: hidden;
+  aspect-ratio: 0.71428571; /* Standard Pokemon card ratio */
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--sds-size-radius-100);
+  transition: transform 0.3s ease;
+}
+
+.cardItem:hover .cardImage {
+  transform: scale(1.02);
+}
+
+.rarityIndicator {
+  position: absolute;
+  top: var(--sds-size-space-200);
+  right: var(--sds-size-space-200);
+  padding: var(--sds-size-space-100) var(--sds-size-space-200);
+  background: rgba(255, 215, 0, 0.2);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 215, 0, 0.4);
+  border-radius: var(--sds-size-radius-full);
+  color: var(--text-rarity-holo);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sds-size-space-200);
+  padding: var(--sds-size-space-300);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--sds-size-space-200);
+}
+
+.cardNumber {
+  color: var(--text-secondary);
+}
+
+.cardSetDivider {
+  margin: 0 var(--sds-size-space-200);
+  color: var(--text-tertiary);
+}
+
+.cardSet {
+  color: var(--text-secondary);
+}
+
+.cardPower {
+  display: flex;
+  gap: var(--sds-size-space-200);
+  align-items: center;
+  padding: var(--sds-size-space-100) var(--sds-size-space-200);
+  background: var(--surface-background-subtle);
+  border-radius: var(--sds-size-radius-100);
+  font-size: 0.9em;
+}
+
+.cardMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--sds-size-space-200);
+  padding-top: var(--sds-size-space-200);
+  border-top: var(--sds-size-stroke-border) solid var(--border-default);
+}
+
+/* Rarity Showcase */
+.rarityGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--sds-size-space-400);
+  padding: var(--sds-size-space-600);
+  background: var(--surface-background-subtle);
+  border-radius: var(--sds-size-radius-200);
+}
+
+.rarityExample {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sds-size-space-300);
+  padding: var(--sds-size-space-400);
+  background: var(--surface-background);
+  border: var(--sds-size-stroke-border) solid var(--border-default);
+  border-radius: var(--sds-size-radius-100);
+}
+
+/* Condition Showcase */
+.conditionGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--sds-size-space-400);
+  padding: var(--sds-size-space-600);
+  background: var(--surface-background-subtle);
+  border-radius: var(--sds-size-radius-200);
+}
+
+.conditionExample {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sds-size-space-300);
+  padding: var(--sds-size-space-400);
+  background: var(--surface-background);
+  border: var(--sds-size-stroke-border) solid var(--border-default);
+  border-radius: var(--sds-size-radius-100);
+}
+
+/* Token Showcase */
+.tokenShowcase {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--sds-size-space-600);
+  padding: var(--sds-size-space-600);
+  background: var(--surface-background-subtle);
+  border-radius: var(--sds-size-radius-200);
+}
+
+.tokenGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sds-size-space-400);
+}
+
+.tokenItem {
+  display: flex;
+  align-items: center;
+  gap: var(--sds-size-space-300);
+  padding: var(--sds-size-space-300);
+  background: var(--surface-background);
+  border: var(--sds-size-stroke-border) solid var(--border-default);
+  border-radius: var(--sds-size-radius-100);
+}
+
+.colorSwatch {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--sds-size-radius-100);
+  border: var(--sds-size-stroke-border) solid var(--border-default);
+  flex-shrink: 0;
+}
+
+.tokenItem code {
+  font: var(--font-body-code);
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+/* Integration Guide */
+.integrationGuide {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--sds-size-space-400);
+  padding: var(--sds-size-space-600);
+  background: var(--surface-background-subtle);
+  border-radius: var(--sds-size-radius-200);
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sds-size-space-200);
+  padding: var(--sds-size-space-400);
+  background: var(--surface-background);
+  border: var(--sds-size-stroke-border) solid var(--border-default);
+  border-radius: var(--sds-size-radius-100);
+  text-align: center;
+}
+
+/* Migration Comparison */
+.migration {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sds-size-space-600);
+  padding: var(--sds-size-space-600);
+  background: var(--surface-background-subtle);
+  border-radius: var(--sds-size-radius-200);
+}
+
+.before,
+.after {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sds-size-space-300);
+}
+
+.codeBlock {
+  background: var(--surface-background-muted);
+  padding: var(--sds-size-space-400);
+  border-radius: var(--sds-size-radius-100);
+  border: var(--sds-size-stroke-border) solid var(--border-default);
+  font: var(--font-body-code);
+  color: var(--text-primary);
+  font-size: 12px;
+  white-space: pre-wrap;
+  overflow-x: auto;
+  line-height: 1.4;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .dashboard {
+    padding: var(--sds-size-space-400);
+  }
+  
+  .dashboardHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--sds-size-space-400);
+  }
+  
+  .stats {
+    flex-direction: column;
+  }
+  
+  .migration {
+    grid-template-columns: 1fr;
+  }
+  
+  .tokenShowcase {
+    grid-template-columns: 1fr;
+  }
+  
+  .rarityGrid,
+  .conditionGrid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+  
+  .integrationGuide {
+    grid-template-columns: 1fr;
+  }
+  
+  .cardGrid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--sds-size-space-400);
+  }
+} 

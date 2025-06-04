@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  gap: var(--sds-size-space-200);
+  padding: 0 var(--sds-size-space-400) var(--sds-size-space-400) 0;
+}
+
+.swatch {
+  width: 20px;
+  height: 20px;
+  border-radius: var(--sds-size-radius-100);
+  border: var(--sds-size-stroke-border) solid var(--border-default);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.swatch:hover {
+  border-color: var(--border-hover);
+}
+
+.swatch.active {
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 2px var(--focus-ring);
+}
+
+.swatchTop {
+  flex: 1;
+  width: 100%;
+}
+
+.swatchBottom {
+  flex: 1;
+  width: 100%;
+} 

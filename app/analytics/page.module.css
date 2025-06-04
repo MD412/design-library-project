@@ -1,0 +1,117 @@
+.dashboard {
+  min-height: 100vh;
+  background: var(--surface-background);
+  color: var(--text-primary);
+  padding: var(--sds-size-space-600);
+  max-width: none;
+  margin: 0 auto;
+  border-radius: var(--sds-size-radius-200);
+}
+
+.header {
+  margin-bottom: var(--sds-size-space-1200);
+}
+
+.header h1 {
+  margin-bottom: var(--sds-size-space-300);
+  color: var(--text-primary);
+}
+
+.header p {
+  color: var(--text-secondary);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sds-size-space-1200);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sds-size-space-600);
+}
+
+.section h2 {
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--sds-size-space-600);
+}
+
+/* Progress bars grid */
+.progressGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--sds-size-space-600);
+}
+
+.progressCard {
+  padding: var(--sds-size-space-600);
+  background: var(--surface-preview-background);
+  border: var(--sds-size-stroke-border) solid var(--border-default);
+  border-radius: var(--sds-size-radius-200);
+  transition: all 0.2s ease;
+}
+
+.progressCard:hover {
+  border-color: var(--border-hover);
+  box-shadow: 0 var(--sds-size-depth-100) var(--sds-size-blur-100) rgba(0, 0, 0, 0.05);
+}
+
+/* Charts grid */
+.chartsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: var(--sds-size-space-600);
+}
+
+.chartCard {
+  background: var(--surface-preview-background);
+  border: var(--sds-size-stroke-border) solid var(--border-default);
+  border-radius: var(--sds-size-radius-200);
+  padding: var(--sds-size-space-600);
+  transition: all 0.2s ease;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chartCard:hover {
+  border-color: var(--border-hover);
+  box-shadow: 0 var(--sds-size-depth-100) var(--sds-size-blur-100) rgba(0, 0, 0, 0.05);
+}
+
+/* Placeholder styling for development */
+.placeholder {
+  padding: var(--sds-size-space-800);
+  background: var(--surface-background-subtle);
+  border: var(--sds-size-stroke-border) dashed var(--border-default);
+  border-radius: var(--sds-size-radius-200);
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .dashboard {
+    padding: var(--sds-size-space-400);
+  }
+  
+  .metricsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .progressGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .chartsGrid {
+    grid-template-columns: 1fr;
+  }
+} 

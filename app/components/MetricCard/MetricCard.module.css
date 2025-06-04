@@ -1,0 +1,133 @@
+.card {
+  /* Base card structure */
+  background: var(--surface-preview-background);
+  border: var(--sds-size-stroke-border) solid var(--border-default);
+  border-radius: var(--sds-size-radius-200);
+  padding: var(--sds-size-space-600);
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  
+  /* Elevation */
+  box-shadow: 0 var(--sds-size-depth-025) var(--sds-size-blur-100) rgba(0, 0, 0, 0.05);
+}
+
+.card:hover {
+  transform: translateY(var(--sds-size-space-negative-100));
+  box-shadow: 0 var(--sds-size-depth-200) var(--sds-size-blur-100) rgba(0, 0, 0, 0.1);
+  border-color: var(--border-hover);
+}
+
+/* Card variants */
+.highlighted {
+  background: var(--surface-background-hover);
+  border-color: var(--interactive-primary);
+}
+
+.highlighted:hover {
+  background: var(--surface-background-hover);
+  border-color: var(--interactive-primary);
+}
+
+/* Icon section */
+.iconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--sds-size-icon-medium);
+  height: var(--sds-size-icon-medium);
+  margin-bottom: var(--sds-size-space-400);
+  color: var(--text-primary);
+}
+
+/* Content layout */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sds-size-space-400);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--sds-size-space-300);
+}
+
+.title {
+  color: var(--text-secondary);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  line-height: 1.2;
+}
+
+/* Value section */
+.valueSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sds-size-space-150);
+}
+
+.value {
+  color: var(--text-primary);
+  margin: 0;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* Change indicator */
+.change {
+  display: flex;
+  align-items: center;
+  gap: var(--sds-size-space-100);
+  padding: var(--sds-size-space-100) var(--sds-size-space-200);
+  border-radius: var(--sds-size-radius-100);
+  font-size: 12px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.changeIcon {
+  font-size: 14px;
+  line-height: 1;
+}
+
+/* Change types using correct semantic tokens */
+.positive {
+  background: var(--status-success-subtle);
+  color: var(--text-success);
+}
+
+.negative {
+  background: var(--status-error-subtle);
+  color: var(--text-error);
+}
+
+.neutral {
+  background: var(--surface-background-muted);
+  color: var(--text-secondary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .card {
+    padding: var(--sds-size-space-400);
+  }
+  
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--sds-size-space-200);
+  }
+  
+  .change {
+    align-self: flex-start;
+  }
+} 
