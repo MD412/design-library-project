@@ -111,4 +111,69 @@
 .label {
   font: var(--typography-label);
   letter-spacing: var(--letter-spacing-button);
+}
+
+/* Gaming/Collection Typography Classes (Circuit theme specific) */
+.card-name {
+  font: var(--font-card-name);
+  color: var(--text-card-name);
+  letter-spacing: var(--letter-spacing-heading);
+}
+
+.card-details {
+  font: var(--font-card-details);
+  color: var(--text-card-details);
+  letter-spacing: var(--letter-spacing-body);
+}
+
+.card-stats {
+  font: var(--font-card-stats);
+  color: var(--text-secondary);
+  letter-spacing: var(--letter-spacing-normal);
+}
+
+.rarity-badge {
+  font: var(--font-rarity-badge);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+}
+
+.condition-badge {
+  font: var(--font-condition-badge);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+}
+
+/* Rarity-specific text colors */
+.rarity-common {
+  color: var(--text-rarity-common);
+}
+
+.rarity-uncommon {
+  color: var(--text-rarity-uncommon);
+}
+
+.rarity-rare {
+  color: var(--text-rarity-rare);
+}
+
+.rarity-holo {
+  color: var(--text-rarity-holo);
+}
+
+/* Condition-specific text colors */
+.condition-mint {
+  color: var(--text-condition-mint);
+}
+
+.condition-good {
+  color: var(--text-condition-good);
+}
+
+.condition-played {
+  color: var(--text-condition-played);
+}
+
+.condition-damaged {
+  color: var(--text-condition-damaged);
 } 

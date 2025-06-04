@@ -1,0 +1,209 @@
+/* Gaming Demo Page Styles */
+
+.dashboard {
+  background: var(--surface-background);
+  border-radius: var(--sds-size-radius-200);
+  padding: var(--sds-size-space-600);
+  border: var(--sds-size-stroke-border) solid var(--border-default);
+}
+
+.dashboardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--sds-size-space-600);
+  padding-bottom: var(--sds-size-space-400);
+  border-bottom: var(--sds-size-stroke-border) solid var(--border-default);
+}
+
+.stats {
+  display: flex;
+  gap: var(--sds-size-space-400);
+  margin-bottom: var(--sds-size-space-600);
+  flex-wrap: wrap;
+}
+
+.statItem {
+  flex: 1;
+  min-width: 120px;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sds-size-space-200);
+}
+
+.cardMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--sds-size-space-300);
+}
+
+/* Rarity Showcase */
+.rarityGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--sds-size-space-400);
+  padding: var(--sds-size-space-600);
+  background: var(--surface-background-subtle);
+  border-radius: var(--sds-size-radius-200);
+}
+
+.rarityExample {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sds-size-space-300);
+  padding: var(--sds-size-space-400);
+  background: var(--surface-background);
+  border: var(--sds-size-stroke-border) solid var(--border-default);
+  border-radius: var(--sds-size-radius-100);
+}
+
+/* Condition Showcase */
+.conditionGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--sds-size-space-400);
+  padding: var(--sds-size-space-600);
+  background: var(--surface-background-subtle);
+  border-radius: var(--sds-size-radius-200);
+}
+
+.conditionExample {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sds-size-space-300);
+  padding: var(--sds-size-space-400);
+  background: var(--surface-background);
+  border: var(--sds-size-stroke-border) solid var(--border-default);
+  border-radius: var(--sds-size-radius-100);
+}
+
+/* Token Showcase */
+.tokenShowcase {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--sds-size-space-600);
+  padding: var(--sds-size-space-600);
+  background: var(--surface-background-subtle);
+  border-radius: var(--sds-size-radius-200);
+}
+
+.tokenGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sds-size-space-400);
+}
+
+.tokenItem {
+  display: flex;
+  align-items: center;
+  gap: var(--sds-size-space-300);
+  padding: var(--sds-size-space-300);
+  background: var(--surface-background);
+  border: var(--sds-size-stroke-border) solid var(--border-default);
+  border-radius: var(--sds-size-radius-100);
+}
+
+.colorSwatch {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--sds-size-radius-100);
+  border: var(--sds-size-stroke-border) solid var(--border-default);
+  flex-shrink: 0;
+}
+
+.tokenItem code {
+  font: var(--font-body-code);
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+/* Integration Guide */
+.integrationGuide {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--sds-size-space-400);
+  padding: var(--sds-size-space-600);
+  background: var(--surface-background-subtle);
+  border-radius: var(--sds-size-radius-200);
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sds-size-space-200);
+  padding: var(--sds-size-space-400);
+  background: var(--surface-background);
+  border: var(--sds-size-stroke-border) solid var(--border-default);
+  border-radius: var(--sds-size-radius-100);
+  text-align: center;
+}
+
+/* Migration Comparison */
+.migration {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sds-size-space-600);
+  padding: var(--sds-size-space-600);
+  background: var(--surface-background-subtle);
+  border-radius: var(--sds-size-radius-200);
+}
+
+.before,
+.after {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sds-size-space-300);
+}
+
+.codeBlock {
+  background: var(--surface-background-muted);
+  padding: var(--sds-size-space-400);
+  border-radius: var(--sds-size-radius-100);
+  border: var(--sds-size-stroke-border) solid var(--border-default);
+  font: var(--font-body-code);
+  color: var(--text-primary);
+  font-size: 12px;
+  white-space: pre-wrap;
+  overflow-x: auto;
+  line-height: 1.4;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dashboard {
+    padding: var(--sds-size-space-400);
+  }
+  
+  .dashboardHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--sds-size-space-400);
+  }
+  
+  .stats {
+    flex-direction: column;
+  }
+  
+  .migration {
+    grid-template-columns: 1fr;
+  }
+  
+  .tokenShowcase {
+    grid-template-columns: 1fr;
+  }
+  
+  .rarityGrid,
+  .conditionGrid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+  
+  .integrationGuide {
+    grid-template-columns: 1fr;
+  }
+} 

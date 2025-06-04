@@ -18,6 +18,7 @@ export default function Navigation({ children }: NavigationProps) {
     { title: 'Analytics Dashboard', href: '/analytics' },
     { title: 'Buttons', href: '/buttons' },
     { title: 'Colors', href: '/colors' },
+    { title: 'Gaming Demo', href: '/gaming-demo' },
     { title: 'Icons', href: '/icons' },
     { title: 'Spacing', href: '/spacing' },
     { title: 'Theming', href: '/theming' },
