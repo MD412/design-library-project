@@ -1,0 +1,76 @@
+/* Essential Design Tokens */
+
+:root {
+  /* Core Colors */
+  --white: rgb(255, 255, 255);
+  --black: rgb(12, 12, 13);
+
+  /* Grays */
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+
+  /* Brand Colors */
+  --brand-blue: #6677e6;
+  --brand-blue-light: #819ff7;
+  --brand-blue-dark: #5158d3;
+
+  /* Feedback Colors */
+  --red: #ef4444;
+  --green: #10b981;
+  --yellow: #f59e0b;
+
+  /* Functional Colors */
+  --background: var(--white);
+  --text: var(--gray-900);
+  --text-light: var(--gray-600);
+  --border: var(--gray-200);
+  
+  /* Component Colors */
+  --button-primary: var(--brand-blue);
+  --button-primary-hover: var(--brand-blue-dark);
+  --button-secondary: var(--gray-100);
+  --button-secondary-hover: var(--gray-200);
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-full: 9999px;
+
+  /* Typography */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: ui-monospace, monospace;
+  
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-base: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 24px;
+  --font-size-3xl: 30px;
+  
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+} 

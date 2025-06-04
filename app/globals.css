@@ -1,1054 +1,145 @@
-/* Import design tokens */
-@import './styles/tokens/primitives/colors.css';
-@import './styles/tokens/semantic/colors.css';
-@import './styles/tokens/primitives/typography.css';
-@import './styles/tokens/semantic/typography.css';
+@import './styles/tokens.css';
 
-/* Import utility classes */
-@import './styles/utilities/typography.css';
-@import './styles/utilities/gaming.css';
-
-/* Import themes */
-@import './styles/themes/dark.css';
-
-/* ===== GLOBAL STYLES ===== */
-
-:root {
-  /* --- PRIMITIVE TOKENS --- */
-
-  /* 1. COLOR PRIMITIVES */
-  /* System Colors (Base background/foreground) */
-  --background: #ffffff; /* Often overridden by themes */
-  --foreground: #171717; /* Often overridden by themes */
-
-  /* Slate Colors */
-  --color-slate-100: rgb(243, 243, 243);
-  --color-slate-200: rgb(227, 227, 227);
-  --color-slate-300: rgb(205, 205, 205);
-  --color-slate-400: rgb(178, 178, 178);
-  --color-slate-500: rgb(148, 148, 148);
-  --color-slate-600: rgb(118, 118, 118);
-  --color-slate-700: rgb(90, 90, 90);
-  --color-slate-800: rgb(67, 67, 67);
-  --color-slate-900: rgb(48, 48, 48);
-  --color-slate-1000: rgb(36, 36, 36);
-
-  /* White Colors (with alpha) */
-  --color-white-100: rgba(255, 255, 255, 0.05);
-  --color-white-200: rgba(255, 255, 255, 0.1);
-  --color-white-300: rgba(255, 255, 255, 0.2);
-  --color-white-400: rgba(255, 255, 255, 0.4);
-  --color-white-500: rgba(255, 255, 255, 0.7);
-  --color-white-600: rgba(255, 255, 255, 0.8);
-  --color-white-700: rgba(255, 255, 255, 0.85);
-  --color-white-800: rgba(255, 255, 255, 0.9);
-  --color-white-900: rgba(255, 255, 255, 0.95);
-  --color-white-1000: rgb(255, 255, 255);
-
-  /* Brand Colors */
-  --color-brand-100: rgb(229, 232, 251);
-  --color-brand-200: rgb(204, 210, 247);
-  --color-brand-300: rgb(178, 187, 242);
-  --color-brand-400: rgb(153, 164, 238);
-  --color-brand-500: rgb(128, 142, 234);
-  --color-brand-600: rgb(102, 119, 230);
-  --color-brand-700: rgb(77, 96, 226);
-  --color-brand-800: rgb(51, 74, 222);
-  --color-brand-900: rgb(26, 51, 217);
-  --color-brand-1000: rgb(0, 28, 213);
-
-  /* Red Colors */
-  --color-red-100: rgb(254, 233, 231);
-  --color-red-200: rgb(253, 211, 208);
-  --color-red-300: rgb(252, 179, 173);
-  --color-red-400: rgb(244, 119, 106);
-  --color-red-500: rgb(236, 34, 31);
-  --color-red-600: rgb(192, 15, 12);
-  --color-red-700: rgb(144, 11, 9);
-  --color-red-800: rgb(106, 8, 7);
-  --color-red-900: rgb(77, 11, 10);
-  --color-red-1000: rgb(48, 6, 3);
-
-  /* Yellow Colors */
-  --color-yellow-100: rgb(255, 251, 235);
-  --color-yellow-200: rgb(255, 241, 194);
-  --color-yellow-300: rgb(255, 232, 163);
-  --color-yellow-400: rgb(232, 185, 49);
-  --color-yellow-500: rgb(230, 160, 0);
-  --color-yellow-600: rgb(191, 106, 2);
-  --color-yellow-700: rgb(151, 81, 2);
-  --color-yellow-800: rgb(104, 45, 3);
-  --color-yellow-900: rgb(83, 37, 4);
-  --color-yellow-1000: rgb(64, 27, 1);
-
-  /* Green Colors */
-  --color-green-100: rgb(235, 255, 238);
-  --color-green-200: rgb(207, 247, 211);
-  --color-green-300: rgb(175, 244, 198);
-  --color-green-400: rgb(133, 224, 163);
-  --color-green-500: rgb(20, 174, 92);
-  --color-green-600: rgb(0, 153, 81);
-  --color-green-700: rgb(0, 128, 67);
-  --color-green-800: rgb(2, 84, 45);
-  --color-green-900: rgb(2, 64, 35);
-  --color-green-1000: rgb(6, 45, 27);
-
-  /* Black Colors (with alpha) */
-  --color-black-100: rgba(12, 12, 13, 0.05);
-  --color-black-200: rgba(12, 12, 13, 0.1);
-  --color-black-300: rgba(12, 12, 13, 0.2);
-  --color-black-400: rgba(12, 12, 13, 0.4);
-  --color-black-500: rgba(12, 12, 13, 0.7);
-  --color-black-600: rgba(12, 12, 13, 0.8);
-  --color-black-700: rgba(12, 12, 13, 0.85);
-  --color-black-800: rgba(12, 12, 13, 0.9);
-  --color-black-900: rgba(12, 12, 13, 0.95);
-  --color-black-1000: rgb(12, 12, 13);
-
-  /* Pink Colors */
-  --color-pink-100: rgb(252, 241, 253);
-  --color-pink-200: rgb(250, 225, 250);
-  --color-pink-300: rgb(245, 192, 239);
-  --color-pink-400: rgb(241, 158, 220);
-  --color-pink-500: rgb(234, 63, 184);
-  --color-pink-600: rgb(215, 50, 168);
-  --color-pink-700: rgb(186, 42, 146);
-  --color-pink-800: rgb(138, 34, 111);
-  --color-pink-900: rgb(87, 24, 74);
-  --color-pink-1000: rgb(63, 21, 54);
-
-  /* Gray Colors */
-  --color-gray-100: rgb(245, 245, 245);
-  --color-gray-200: rgb(230, 230, 230);
-  --color-gray-300: rgb(217, 217, 217);
-  --color-gray-400: rgb(179, 179, 179);
-  --color-gray-500: rgb(117, 117, 117);
-  --color-gray-600: rgb(68, 68, 68);
-  --color-gray-700: rgb(56, 56, 56);
-  --color-gray-800: rgb(44, 44, 44);
-  --color-gray-900: rgb(30, 30, 30);
-  --color-gray-1000: rgb(17, 17, 17);
-
-  /* 2. SIZE PRIMITIVES (Spacing, Radius, Depth, Strokes, Blur, Icons) */
-  /* Spacing Scale */
-  --sds-size-space-0: 0px;
-  --sds-size-space-050: 2px;
-  --sds-size-space-100: 4px;
-  --sds-size-space-150: 6px;
-  --sds-size-space-200: 8px;
-  --sds-size-space-300: 12px;
-  --sds-size-space-400: 16px;
-  --sds-size-space-600: 24px;
-  --sds-size-space-800: 32px;
-  --sds-size-space-1200: 48px;
-  --sds-size-space-1600: 64px;
-  --sds-size-space-2400: 96px;
-  --sds-size-space-4000: 160px;
-  /* Negative spacing */
-  --sds-size-space-negative-100: -4px;
-  --sds-size-space-negative-200: -8px;
-  --sds-size-space-negative-300: -12px;
-  --sds-size-space-negative-400: -16px;
-  --sds-size-space-negative-600: -24px;
-  /* Border Radius */
-  --sds-size-radius-100: 4px;
-  --sds-size-radius-200: 8px;
-  --sds-size-radius-400: 16px;
-  --sds-size-radius-full: 9999px;
-  /* Depth (for shadows and z-index) */
-  --sds-size-depth-0: 0;
-  --sds-size-depth-025: 1;
-  --sds-size-depth-100: 4;
-  --sds-size-depth-200: 8;
-  --sds-size-depth-400: 16;
-  --sds-size-depth-800: 32;
-  --sds-size-depth-1200: 48;
-  /* Negative depth */
-  --sds-size-depth-negative-025: -1;
-  --sds-size-depth-negative-100: -4;
-  --sds-size-depth-negative-200: -8;
-  --sds-size-depth-negative-400: -16;
-  --sds-size-depth-negative-800: -32;
-  --sds-size-depth-negative-1200: -48;
-  /* Stroke widths */
-  --sds-size-stroke-border: 1px;
-  --sds-size-stroke-focus-ring: 2px;
-  /* Blur */
-  --sds-size-blur-100: 4px;
-  /* Icon sizes */
-  --sds-size-icon-small: 24px;
-  --sds-size-icon-medium: 32px;
-  --sds-size-icon-large: 40px;
-
-  /* 3. TYPOGRAPHY PRIMITIVES (Full font shorthands, letter spacing) */
-  /* Title Styles */
-  --font-title-hero: 700 72px/1.2 'Inter', sans-serif;
-  --font-title-page: 700 48px/1.2 'Inter', sans-serif;
-  --font-subtitle: 400 32px/1.2 'Inter', sans-serif;
-  --letter-spacing-title-hero: -3%;
-  --letter-spacing-title-page: -2%;
-  /* Heading Styles */
-  --font-heading: 600 24px/1.2 'Inter', sans-serif;
-  --font-subheading: 400 20px/1.2 'Inter', sans-serif;
-  --letter-spacing-heading: -2%;
-  /* Body Styles */
-  --font-body-base: 400 16px/1.4 'Inter', sans-serif;
-  --font-body-strong: 600 16px/1.4 'Inter', sans-serif;
-  --font-body-small: 400 14px/1.4 'Inter', sans-serif;
-  --font-body-small-strong: 600 14px/1.4 'Inter', sans-serif;
-  --font-body-code: 400 16px/1 'Roboto Mono', monospace;
-  --font-input: 400 16px/1 'Inter', sans-serif;
-  /* Single Line Variants */
-  --font-body-base-single: 400 16px/1 'Inter', sans-serif;
-  --font-body-small-strong-single: 600 14px/1 'Inter', sans-serif;
-
-  /* --- SEMANTIC TOKENS (THEME CONTRACT) --- */
-  /* These are what components should use. Themes override these. */
-  
-  /* A. Core Page Semantics (already defined with primitives, listed for completeness) */
-  /* --background: #ffffff; */ /* Defined in primitives */
-  /* --foreground: #171717; */ /* Defined in primitives */
-
-  /* B. Surface Colors */
-  --surface-background: var(--color-white-1000);
-  --surface-background-hover: var(--color-gray-100);
-  --surface-background-pressed: var(--color-gray-200);
-  --surface-background-subtle: var(--color-gray-100); /* For subtle variations, e.g., code blocks if not distinct */
-  --surface-background-muted: var(--color-gray-200);
-  --surface-background-emphasis: var(--color-gray-900);
-  --surface-background-disabled: var(--color-gray-100);
-  --surface-container-level-1: var(--color-gray-100); /* For first-level containers like DocsSection */
-  --surface-preview-background: var(--color-gray-100); /* For component preview areas like DocsExample's preview */
-
-  /* C. Text Colors */
-  --text-primary: var(--color-gray-900);
-  --text-secondary: var(--color-gray-600);
-  --text-tertiary: var(--color-gray-500);
-  --text-disabled: var(--color-gray-400);
-  --text-inverse: var(--color-white-1000); /* For text on dark/colored backgrounds */
-  --text-brand: var(--color-brand-700);
-  --text-error: var(--color-red-600);
-  --text-success: var(--color-green-700);
-  --text-warning: var(--color-yellow-600);
-  /* --text-heading-strong: var(--text-primary); */ /* Example if needed for specific heading emphasis, often same as primary */
-  
-  /* D. Border Colors */
-  --border-default: var(--color-gray-200);
-  --border-hover: var(--color-gray-300);
-  --border-focus: var(--color-brand-500); /* Often same as focus-ring but can be different for borders */
-  --border-error: var(--color-red-300);
-  --border-success: var(--color-green-300);
-  --border-disabled: var(--color-gray-200);
-  --border-interactive-primary: var(--interactive-primary-hover); /* Default primary button border */
-  --border-interactive-secondary: var(--color-gray-300); /* Default secondary button border */
-
-  /* E. Interactive Element Colors */
-  /* Primary Interactive Elements (e.g., Buttons) */
-  --interactive-primary: var(--color-brand-600);
-  --interactive-primary-hover: var(--color-brand-700);
-  --interactive-primary-pressed: var(--color-brand-800);
-  --interactive-primary-disabled: var(--color-brand-200);
-  /* Secondary Interactive Elements (e.g., Buttons) */
-  --interactive-secondary: var(--color-gray-100);
-  --interactive-secondary-hover: var(--color-gray-200);
-  --interactive-secondary-pressed: var(--color-gray-300);
-  --interactive-secondary-disabled: var(--color-gray-100);
-
-  /* F. Status Colors */
-  --status-error: var(--color-red-500);
-  --status-error-subtle: var(--color-red-100);
-  --status-success: var(--color-green-500);
-  --status-success-subtle: var(--color-green-100);
-  --status-warning: var(--color-yellow-500);
-  --status-warning-subtle: var(--color-yellow-100);
-  --status-info: var(--color-brand-500);
-  --status-info-subtle: var(--color-brand-100);
-
-  /* G. Focus Indicator Colors */
-  --focus-ring: var(--color-brand-300); /* For focus outlines/rings */
-
-  /* H. Overlay Colors */
-  --overlay-background: var(--color-black-500); /* E.g., for modals, dialog backdrops */
-  --overlay-hover: var(--color-black-600);
-
-  /* I. Semantic Typography Tokens (already defined in primitives, listed for contract completeness) */
-  /* These are directly used by components/utilities, themes redefine them. */
-  /* --font-title-hero: ... */
-  /* --font-title-page: ... */
-  /* ... and all other --font- and --letter-spacing- tokens */
-
-  /* Primitive tokens */
-  --color-blue-50: #f0f4ff;
-  --color-blue-100: #e0e9ff;
-  --color-blue-200: #c7d7fe;
-  --color-blue-300: #a4bffc;
-  --color-blue-400: #819ff7;
-  --color-blue-500: #6677e6;
-  --color-blue-600: #5158d3;
-  --color-blue-700: #4342b3;
-  --color-blue-800: #383790;
-  --color-blue-900: #322f73;
-
-  --color-gray-50: #f9fafb;
-  --color-gray-100: #f3f4f6;
-  --color-gray-200: #e5e7eb;
-  --color-gray-300: #d1d5db;
-  --color-gray-400: #9ca3af;
-  --color-gray-500: #6b7280;
-  --color-gray-600: #4b5563;
-  --color-gray-700: #374151;
-  --color-gray-800: #1f2937;
-  --color-gray-900: #111827;
-
-  --color-green-50: #ecfdf5;
-  --color-green-100: #d1fae5;
-  --color-green-200: #a7f3d0;
-  --color-green-300: #6ee7b7;
-  --color-green-400: #34d399;
-  --color-green-500: #10b981;
-  --color-green-600: #059669;
-  --color-green-700: #047857;
-  --color-green-800: #065f46;
-  --color-green-900: #064e3b;
-
-  --color-yellow-50: #fffbeb;
-  --color-yellow-100: #fef3c7;
-  --color-yellow-200: #fde68a;
-  --color-yellow-300: #fcd34d;
-  --color-yellow-400: #fbbf24;
-  --color-yellow-500: #f59e0b;
-  --color-yellow-600: #d97706;
-  --color-yellow-700: #b45309;
-  --color-yellow-800: #92400e;
-  --color-yellow-900: #78350f;
-
-  --color-red-50: #fef2f2;
-  --color-red-100: #fee2e2;
-  --color-red-200: #fecaca;
-  --color-red-300: #fca5a5;
-  --color-red-400: #f87171;
-  --color-red-500: #ef4444;
-  --color-red-600: #dc2626;
-  --color-red-700: #b91c1c;
-  --color-red-800: #991b1b;
-  --color-red-900: #7f1d1d;
-
-  /* Spacing tokens */
-  --sds-size-space-100: 4px;
-  --sds-size-space-200: 8px;
-  --sds-size-space-300: 12px;
-  --sds-size-space-400: 16px;
-  --sds-size-space-500: 20px;
-  --sds-size-space-600: 24px;
-  --sds-size-space-700: 32px;
-  --sds-size-space-800: 40px;
-  --sds-size-space-900: 48px;
-
-  /* Border radius tokens */
-  --sds-size-radius-100: 4px;
-  --sds-size-radius-200: 8px;
-  --sds-size-radius-300: 12px;
-  --sds-size-radius-400: 16px;
-  --sds-size-radius-500: 24px;
-  --sds-size-radius-full: 9999px;
-
-  /* Border width tokens */
-  --sds-size-stroke-border: 1px;
-  --sds-size-stroke-focus-ring: 2px;
-
-  /* Icon size tokens */
-  --sds-size-icon-small: 16px;
-  --sds-size-icon-medium: 20px;
-  --sds-size-icon-large: 24px;
-
-  /* Font family tokens */
-  --font-family-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
-  --font-family-mono: var(--font-roboto-mono), 'Courier New', monospace;
-  --font-family-display: var(--font-family-sans);
-
-  /* Font size tokens */
-  --font-size-xs: 12px;
-  --font-size-sm: 14px;
-  --font-size-base: 16px;
-  --font-size-lg: 18px;
-  --font-size-xl: 20px;
-  --font-size-2xl: 24px;
-  --font-size-3xl: 30px;
-  --font-size-4xl: 36px;
-
-  /* Line height tokens */
-  --line-height-tight: 1.25;
-  --line-height-base: 1.5;
-  --line-height-relaxed: 1.75;
-
-  /* Letter spacing tokens */
-  --letter-spacing-tight: -0.025em;
-  --letter-spacing-base: 0;
-  --letter-spacing-wide: 0.025em;
-  --letter-spacing-heading: -0.02em;
-
-  /* Font weight tokens */
-  --font-weight-regular: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
-
-  /* Typography scale */
-  --font-title-page: 700 36px/1.25 var(--font-family-display);
-  --font-heading: 600 24px/1.25 var(--font-family-sans);
-  --font-subheading: 600 20px/1.5 var(--font-family-sans);
-  --font-body-base: 400 16px/1.5 var(--font-family-sans);
-  --font-body-strong: 600 16px/1.5 var(--font-family-sans);
-  --font-body-small: 400 14px/1.5 var(--font-family-sans);
-  --font-body-code: 400 14px/1.5 var(--font-family-mono);
-
-  /* Default theme semantic tokens */
-  --text-primary: var(--color-gray-900);
-  --text-secondary: var(--color-gray-600);
-  --text-brand: var(--color-blue-600);
-  --text-inverse: var(--color-gray-50);
-  --text-success: var(--color-green-600);
-  --text-warning: var(--color-yellow-600);
-  --text-error: var(--color-red-600);
-
-  --surface-background: var(--color-gray-50);
-  --surface-background-hover: var(--color-gray-100);
-  --surface-background-pressed: var(--color-gray-200);
-  --surface-background-subtle: var(--color-gray-100);
-
-  --interactive-primary: var(--color-blue-600);
-  --interactive-primary-hover: var(--color-blue-700);
-  --interactive-primary-pressed: var(--color-blue-800);
-
-  --interactive-secondary: var(--color-gray-100);
-  --interactive-secondary-hover: var(--color-gray-200);
-  --interactive-secondary-pressed: var(--color-gray-300);
-
-  --border-default: var(--color-gray-200);
-  --border-hover: var(--color-gray-300);
-  --border-focus: var(--color-blue-600);
-
-  --border-interactive-primary: var(--color-blue-600);
-  --border-interactive-secondary: var(--color-gray-200);
-
-  --focus-ring: var(--color-blue-200);
-}
-
-/* ===== ROOT THEME (Light Mode Default) ===== */
-:root {
-  /* A. Core Page Semantics */
-  --background: var(--color-white-1000);
-  --foreground: var(--color-gray-900);
-
-  /* B. Surface Colors */
-  --surface-background: var(--color-gray-50);
-  --surface-background-hover: var(--color-gray-100);
-  --surface-background-pressed: var(--color-gray-200);
-  --surface-background-subtle: var(--color-gray-100);
-  --surface-background-muted: var(--color-gray-200);
-  --surface-background-emphasis: var(--color-gray-900);
-  --surface-background-disabled: var(--color-gray-100);
-  --surface-container-level-1: var(--color-gray-100);
-  --surface-preview-background: var(--color-gray-100);
-
-  /* C. Text Colors */
-  --text-primary: var(--color-gray-900);
-  --text-secondary: var(--color-gray-600);
-  --text-tertiary: var(--color-gray-500);
-  --text-disabled: var(--color-gray-400);
-  --text-inverse: var(--color-gray-50);
-  --text-brand: var(--color-blue-600);
-  --text-error: var(--color-red-600);
-  --text-success: var(--color-green-600);
-  --text-warning: var(--color-yellow-600);
-  
-  /* D. Border Colors */
-  --border-default: var(--color-gray-200);
-  --border-hover: var(--color-gray-300);
-  --border-focus: var(--color-blue-600);
-  --border-error: var(--color-red-300);
-  --border-success: var(--color-green-300);
-  --border-disabled: var(--color-gray-200);
-  --border-interactive-primary: var(--interactive-primary);
-  --border-interactive-secondary: var(--color-gray-300);
-
-  /* E. Interactive Element Colors */
-  --interactive-primary: var(--color-blue-600);
-  --interactive-primary-hover: var(--color-blue-700);
-  --interactive-primary-pressed: var(--color-blue-800);
-  --interactive-primary-disabled: var(--color-blue-200);
-  
-  --interactive-secondary: var(--color-gray-100);
-  --interactive-secondary-hover: var(--color-gray-200);
-  --interactive-secondary-pressed: var(--color-gray-300);
-  --interactive-secondary-disabled: var(--color-gray-100);
-
-  /* F. Status Colors */
-  --status-error: var(--color-red-500);
-  --status-error-subtle: var(--color-red-100);
-  --status-success: var(--color-green-500);
-  --status-success-subtle: var(--color-green-100);
-  --status-warning: var(--color-yellow-500);
-  --status-warning-subtle: var(--color-yellow-100);
-  --status-info: var(--color-blue-500);
-  --status-info-subtle: var(--color-blue-100);
-
-  /* G. Focus Indicator Colors */
-  --focus-ring: var(--color-blue-200);
-
-  /* H. Overlay Colors */
-  --overlay-background: var(--color-black-300);
-  --overlay-hover: var(--color-black-400);
-
-  /* I. Typography */
-  --font-family-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  --font-family-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
-
-  --font-title-hero: 600 48px/1.2 var(--font-family-sans);
-  --font-title-page: 600 36px/1.2 var(--font-family-sans);
-  --font-subtitle: 400 24px/1.3 var(--font-family-sans);
-  --font-heading: 600 20px/1.3 var(--font-family-sans);
-  --font-subheading: 600 16px/1.4 var(--font-family-sans);
-  --font-body-base: 400 16px/1.5 var(--font-family-sans);
-  --font-body-strong: 600 16px/1.5 var(--font-family-sans);
-  --font-body-small: 400 14px/1.5 var(--font-family-sans);
-  --font-body-small-strong: 600 14px/1.5 var(--font-family-sans);
-  --font-body-code: 400 14px/1.5 var(--font-family-mono);
-  --font-input: 400 16px/1.5 var(--font-family-sans);
-
-  --letter-spacing-title-hero: -0.02em;
-  --letter-spacing-title-page: -0.015em;
-  --letter-spacing-heading: -0.01em;
-}
-
-/* ===== OS DARK MODE (uses :root, prefers-color-scheme) ===== */
-@media (prefers-color-scheme: dark) {
-  :root { /* Overrides for OS-level dark mode preference */
-    /* A. Core Page Semantics */
-    --background: #0a0a0a;
-    --foreground: #ededed;
-
-    /* B. Surface Colors */
-    --surface-background: var(--color-gray-1000);
-    --surface-background-hover: var(--color-gray-900);
-    --surface-background-pressed: var(--color-gray-800);
-    --surface-background-subtle: var(--color-gray-900);
-    --surface-background-muted: var(--color-gray-800);
-    --surface-background-emphasis: var(--color-gray-100);
-    --surface-background-disabled: var(--color-gray-900);
-    --surface-container-level-1: var(--color-gray-900);
-    --surface-preview-background: var(--color-gray-900);
-
-    /* C. Text Colors */
-    --text-primary: var(--color-gray-100);
-    --text-secondary: var(--color-gray-400);
-    --text-tertiary: var(--color-gray-500);
-    --text-disabled: var(--color-gray-600);
-    --text-inverse: var(--color-gray-900);
-    --text-brand: var(--color-brand-400);
-    --text-error: var(--color-red-400);
-    --text-success: var(--color-green-400);
-    --text-warning: var(--color-yellow-400);
-    /* --text-heading-strong: var(--text-primary); */
-
-    /* D. Border Colors */
-    --border-default: var(--color-gray-800);
-    --border-hover: var(--color-gray-700);
-    --border-focus: var(--color-brand-500);
-    --border-error: var(--color-red-700);
-    --border-success: var(--color-green-700);
-    --border-disabled: var(--color-gray-800);
-    --border-interactive-primary: var(--interactive-primary-hover);
-    --border-interactive-secondary: var(--color-gray-700);
-
-    /* E. Interactive Element Colors */
-    --interactive-primary: var(--color-brand-500);
-    --interactive-primary-hover: var(--color-brand-400);
-    --interactive-primary-pressed: var(--color-brand-300);
-    --interactive-primary-disabled: var(--color-brand-800);
-    
-    --interactive-secondary: var(--color-gray-800);
-    --interactive-secondary-hover: var(--color-gray-700);
-    --interactive-secondary-pressed: var(--color-gray-600);
-    --interactive-secondary-disabled: var(--color-gray-900);
-
-    /* F. Status Colors */
-    --status-error: var(--color-red-500);
-    --status-error-subtle: var(--color-red-900);
-    --status-success: var(--color-green-500);
-    --status-success-subtle: var(--color-green-900);
-    --status-warning: var(--color-yellow-500);
-    --status-warning-subtle: var(--color-yellow-900);
-    --status-info: var(--color-brand-500);
-    --status-info-subtle: var(--color-brand-900);
-
-    /* G. Focus Indicator Colors */
-    --focus-ring: var(--color-brand-700);
-
-    /* H. Overlay Colors */
-    --overlay-background: var(--color-black-700);
-    --overlay-hover: var(--color-black-800);
-
-    /* I. Semantic Typography Tokens are NOT redefined here as they are part of the :root contract already. */
-    /* The font definitions themselves don't change for OS dark mode, only colors. */
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: 'Inter', sans-serif;
-  font-size: 16px;
-  line-height: 1.4;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
+/* Reset & Base Styles */
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background: var(--background);
+  color: var(--text);
+  font-family: var(--font-sans);
+}
+
+/* Typography */
+h1 {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.3;
+}
+
+h3 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.4;
+}
+
+p {
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+}
+
+/* Links */
 a {
-  color: inherit;
+  color: var(--brand-blue);
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+a:hover {
+  text-decoration: underline;
 }
 
-/* Typography utility classes */
-.title-hero {
-  font: var(--font-title-hero);
-  letter-spacing: var(--letter-spacing-title-hero);
+/* Buttons */
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  padding: var(--space-2) var(--space-4);
+  transition: background-color 0.2s;
 }
 
-.title-page {
-  font: var(--font-title-page);
-  letter-spacing: var(--letter-spacing-title-page);
+.button-primary {
+  background: var(--button-primary);
+  color: var(--white);
 }
 
-.subtitle {
-  font: var(--font-subtitle);
+.button-primary:hover {
+  background: var(--button-primary-hover);
 }
 
-.heading {
-  font: var(--font-heading);
-  letter-spacing: var(--letter-spacing-heading);
+.button-secondary {
+  background: var(--button-secondary);
+  color: var(--text);
 }
 
-.subheading {
-  font: var(--font-subheading);
+.button-secondary:hover {
+  background: var(--button-secondary-hover);
 }
 
-.body-base {
-  font: var(--font-body-base);
+/* Form Elements */
+input, textarea {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-2);
+  font-size: var(--font-size-base);
+  background: var(--white);
+  color: var(--text);
 }
 
-.body-strong {
-  font: var(--font-body-strong);
+input:focus, textarea:focus {
+  outline: 2px solid var(--brand-blue-light);
+  outline-offset: 1px;
 }
 
-.body-small {
-  font: var(--font-body-small);
+/* Status Colors */
+.status-error {
+  color: var(--red);
 }
 
-.body-small-strong {
-  font: var(--font-body-small-strong);
+.status-success {
+  color: var(--green);
 }
 
-.body-code {
-  font: var(--font-body-code);
+.status-warning {
+  color: var(--yellow);
 }
 
-.input {
-  font: var(--font-input);
+/* Utility Classes */
+.text-light {
+  color: var(--text-light);
 }
 
-/* Single line variants */
-.body-base-single {
-  font: var(--font-body-base-single);
+.text-center {
+  text-align: center;
 }
 
-.body-small-strong-single {
-  font: var(--font-body-small-strong-single);
+.flex {
+  display: flex;
 }
 
-/* ===== THEME: LIGHT ===== */
-[data-theme='light'] {
-  /* A. Core Page Semantics */
-  --background: var(--color-white-1000);
-  --foreground: var(--color-gray-900);
-
-  /* B. Surface Colors */
-  --surface-background: var(--color-gray-50);
-  --surface-background-hover: var(--color-gray-100);
-  --surface-background-pressed: var(--color-gray-200);
-  --surface-background-subtle: var(--color-gray-100);
-  --surface-background-muted: var(--color-gray-200);
-  --surface-background-emphasis: var(--color-gray-900);
-  --surface-background-disabled: var(--color-gray-100);
-  --surface-container-level-1: var(--color-gray-100);
-  --surface-preview-background: var(--color-gray-100);
-
-  /* C. Text Colors */
-  --text-primary: var(--color-gray-900);
-  --text-secondary: var(--color-gray-600);
-  --text-tertiary: var(--color-gray-500);
-  --text-disabled: var(--color-gray-400);
-  --text-inverse: var(--color-gray-50);
-  --text-brand: var(--color-blue-600);
-  --text-error: var(--color-red-600);
-  --text-success: var(--color-green-600);
-  --text-warning: var(--color-yellow-600);
-  
-  /* D. Border Colors */
-  --border-default: var(--color-gray-200);
-  --border-hover: var(--color-gray-300);
-  --border-focus: var(--color-blue-600);
-  --border-error: var(--color-red-300);
-  --border-success: var(--color-green-300);
-  --border-disabled: var(--color-gray-200);
-  --border-interactive-primary: var(--interactive-primary);
-  --border-interactive-secondary: var(--color-gray-300);
-
-  /* E. Interactive Element Colors */
-  --interactive-primary: var(--color-blue-600);
-  --interactive-primary-hover: var(--color-blue-700);
-  --interactive-primary-pressed: var(--color-blue-800);
-  --interactive-primary-disabled: var(--color-blue-200);
-  
-  --interactive-secondary: var(--color-gray-100);
-  --interactive-secondary-hover: var(--color-gray-200);
-  --interactive-secondary-pressed: var(--color-gray-300);
-  --interactive-secondary-disabled: var(--color-gray-100);
-
-  /* F. Status Colors */
-  --status-error: var(--color-red-500);
-  --status-error-subtle: var(--color-red-100);
-  --status-success: var(--color-green-500);
-  --status-success-subtle: var(--color-green-100);
-  --status-warning: var(--color-yellow-500);
-  --status-warning-subtle: var(--color-yellow-100);
-  --status-info: var(--color-blue-500);
-  --status-info-subtle: var(--color-blue-100);
-
-  /* G. Focus Indicator Colors */
-  --focus-ring: var(--color-blue-200);
-
-  /* H. Overlay Colors */
-  --overlay-background: var(--color-black-300);
-  --overlay-hover: var(--color-black-400);
+.flex-col {
+  flex-direction: column;
 }
 
-/* ===== THEME: DARK ===== */
-[data-theme='dark'] {
-  /* A. Core Page Semantics */
-  --background: var(--color-gray-900);
-  --foreground: var(--color-white-1000);
-
-  /* B. Surface Colors */
-  --surface-background: var(--color-gray-800);
-  --surface-background-hover: var(--color-gray-700);
-  --surface-background-pressed: var(--color-gray-600);
-  --surface-background-subtle: var(--color-gray-700);
-  --surface-background-muted: var(--color-gray-600);
-  --surface-background-emphasis: var(--color-white-1000);
-  --surface-background-disabled: var(--color-gray-700);
-  --surface-container-level-1: var(--color-gray-700);
-  --surface-preview-background: var(--color-gray-700);
-
-  /* C. Text Colors */
-  --text-primary: var(--color-white-1000);
-  --text-secondary: var(--color-gray-400);
-  --text-tertiary: var(--color-gray-500);
-  --text-disabled: var(--color-gray-600);
-  --text-inverse: var(--color-gray-900);
-  --text-brand: var(--color-brand-400);
-  --text-error: var(--color-red-400);
-  --text-success: var(--color-green-400);
-  --text-warning: var(--color-yellow-400);
-  /* --text-heading-strong: var(--text-primary); */ /* Default to primary if not specified */
-  
-  /* D. Border Colors */
-  --border-default: var(--color-gray-600);
-  --border-hover: var(--color-gray-500);
-  --border-focus: var(--color-brand-500);
-  --border-error: var(--color-red-700);
-  --border-success: var(--color-green-700);
-  --border-disabled: var(--color-gray-700);
-  --border-interactive-primary: var(--interactive-primary-hover);
-  --border-interactive-secondary: var(--color-gray-500);
-
-  /* E. Interactive Element Colors */
-  --interactive-primary: var(--color-brand-500);
-  --interactive-primary-hover: var(--color-brand-400);
-  --interactive-primary-pressed: var(--color-brand-300);
-  --interactive-primary-disabled: var(--color-brand-800);
-  
-  --interactive-secondary: var(--color-gray-700);
-  --interactive-secondary-hover: var(--color-gray-600);
-  --interactive-secondary-pressed: var(--color-gray-500);
-  --interactive-secondary-disabled: var(--color-gray-800);
-  
-  /* F. Status Colors */
-  --status-error: var(--color-red-500);            /* Added based on :root pattern */
-  --status-error-subtle: var(--color-red-900);    /* Added based on :root pattern */
-  --status-success: var(--color-green-500);          /* Added based on :root pattern */
-  --status-success-subtle: var(--color-green-900);  /* Added based on :root pattern */
-  --status-warning: var(--color-yellow-500);        /* Added based on :root pattern */
-  --status-warning-subtle: var(--color-yellow-900);/* Added based on :root pattern */
-  --status-info: var(--color-brand-500);             /* Added based on :root pattern */
-  --status-info-subtle: var(--color-brand-900);   /* Added based on :root pattern */
-
-  /* G. Focus Indicator Colors */
-  --focus-ring: var(--color-brand-700);
-
-  /* H. Overlay Colors */
-  --overlay-background: var(--color-black-700);
-  --overlay-hover: var(--color-black-800);
-
-  /* I. Semantic Typography Tokens - Inherited from :root unless overridden */
-  /* e.g., if dark theme needed specific font tweaks beyond color, they'd go here. */
+.items-center {
+  align-items: center;
 }
 
-/* ===== THEME: HIGH CONTRAST ===== */
-[data-theme='high-contrast'] {
-  /* A. Core Page Semantics */
-  --background: var(--color-white-1000);
-  --foreground: var(--color-black-1000);
-
-  /* B. Surface Colors */
-  --surface-background: var(--color-white-1000);
-  --surface-background-hover: var(--color-gray-200);
-  --surface-background-pressed: var(--color-gray-300);
-  --surface-background-subtle: var(--color-gray-200);
-  --surface-background-muted: var(--color-gray-300);
-  --surface-background-emphasis: var(--color-black-1000);
-  --surface-background-disabled: var(--color-gray-200);
-  --surface-container-level-1: var(--color-gray-200);
-  --surface-preview-background: var(--color-gray-200);
-
-  /* C. Text Colors */
-  --text-primary: var(--color-black-1000);
-  --text-secondary: var(--color-gray-900);
-  --text-tertiary: var(--color-gray-800);
-  --text-disabled: var(--color-gray-600);
-  --text-inverse: var(--color-white-1000);
-  --text-brand: var(--color-brand-900);
-  --text-error: var(--color-red-900);
-  --text-success: var(--color-green-900);
-  --text-warning: var(--color-yellow-900);
-  /* --text-heading-strong: var(--text-primary); */
-  
-  /* D. Border Colors */
-  --border-default: var(--color-black-1000);
-  --border-hover: var(--color-gray-900);
-  --border-focus: var(--color-brand-900);
-  --border-error: var(--color-red-900);
-  --border-success: var(--color-green-900);
-  --border-disabled: var(--color-gray-400);
-  --border-interactive-primary: var(--foreground); /* High contrast button border */
-  --border-interactive-secondary: var(--color-gray-900);
-
-  /* E. Interactive Element Colors */
-  --interactive-primary: var(--color-brand-900);
-  --interactive-primary-hover: var(--color-brand-1000);
-  --interactive-primary-pressed: var(--color-brand-800);
-  --interactive-primary-disabled: var(--color-brand-300);
-  
-  --interactive-secondary: var(--color-gray-200);
-  --interactive-secondary-hover: var(--color-gray-300);
-  --interactive-secondary-pressed: var(--color-gray-400);
-  --interactive-secondary-disabled: var(--color-gray-100);
-
-  /* F. Status Colors */
-  --status-error: var(--color-red-700);             /* Adjusted for high contrast */
-  --status-error-subtle: var(--color-red-200);     /* Adjusted for high contrast */
-  --status-success: var(--color-green-700);           /* Adjusted for high contrast */
-  --status-success-subtle: var(--color-green-200);   /* Adjusted for high contrast */
-  --status-warning: var(--color-yellow-700);         /* Adjusted for high contrast */
-  --status-warning-subtle: var(--color-yellow-200); /* Adjusted for high contrast */
-  --status-info: var(--color-brand-700);              /* Adjusted for high contrast */
-  --status-info-subtle: var(--color-brand-200);    /* Adjusted for high contrast */
-
-  /* G. Focus Indicator Colors */
-  --focus-ring: var(--color-brand-900);
-
-  /* H. Overlay Colors */
-  --overlay-background: var(--color-black-900);
-  --overlay-hover: var(--color-black-1000);
-
-  /* I. Semantic Typography Tokens - Inherited from :root unless overridden */
+.justify-between {
+  justify-content: space-between;
 }
 
-/* ===== THEME: CIRCUIT ===== */
-/* Circuit theme - Inspired by circuit board colors, enhanced for gaming/collection apps */
-[data-theme='circuit'] {
-  /* Local Theme Primitives (eva- palette) + Gaming enhancements */
-  --eva-dark-teal: #1a4a47;
-  --eva-mid-teal: #2d6a65;
-  --eva-light-teal: #4a9b94;
-  --eva-bright-yellow: #ffb935; 
-  --eva-light-yellow: #fff2d1; 
-  --eva-magenta: #e91e63;
-  --eva-darker-teal: #0f2b29;
-  
-  /* Gaming/Collection-specific primitives */
-  --circuit-neon-blue: #00d4ff;
-  --circuit-electric-purple: #9945ff;
-  --circuit-lime-green: #39ff14;
-  --circuit-orange: #ff6b35;
-  --circuit-deep-purple: #4c1d95;
-  --circuit-card-glow: rgba(255, 185, 53, 0.2);
-  --circuit-rare-gold: #ffd700;
-  --circuit-holo-rainbow: linear-gradient(45deg, #ff6b35, #f7931e, #ffeb3b, #4caf50, #2196f3, #9c27b0);
-  
-  /* A. Core Page Semantics */
-  --background: var(--eva-darker-teal); 
-  --foreground: var(--eva-light-yellow); 
+.gap-1 { gap: var(--space-1); }
+.gap-2 { gap: var(--space-2); }
+.gap-4 { gap: var(--space-4); }
 
-  /* B. Surface Colors */
-  --surface-background: var(--eva-mid-teal);         
-  --surface-background-hover: var(--eva-light-teal);   
-  --surface-background-pressed: var(--eva-dark-teal);    
-  --surface-background-subtle: var(--eva-darker-teal);  
-  --surface-background-muted: var(--eva-dark-teal);    
-  --surface-background-emphasis: var(--eva-light-yellow); 
-  --surface-background-disabled: #1f3a38; 
-  --surface-container-level-1: var(--eva-dark-teal); 
-  --surface-preview-background: var(--eva-dark-teal);
-  
-  /* Gaming-specific surfaces */
-  --surface-card-background: var(--eva-mid-teal);
-  --surface-card-hover: var(--eva-light-teal);
-  --surface-card-selected: var(--eva-bright-yellow);
-  --surface-card-border: var(--eva-light-teal);
-  --surface-modal-background: rgba(15, 43, 41, 0.95);
-  --surface-grid-background: var(--eva-darker-teal);
+.p-1 { padding: var(--space-1); }
+.p-2 { padding: var(--space-2); }
+.p-4 { padding: var(--space-4); }
 
-  /* C. Text Colors */
-  --text-primary: var(--eva-light-yellow);   
-  --text-secondary: var(--eva-light-yellow); 
-  --text-tertiary: #5a7d7a;    
-  --text-disabled: #4a6664;  
-  --text-inverse: var(--eva-darker-teal);   
-  --text-brand: var(--eva-bright-yellow);    
-  --text-error: #ff6b6b; 
-  --text-success: #48c774; 
-  --text-warning: #ffdd57; 
-  --text-heading-strong: var(--eva-bright-yellow);
-  
-  /* Gaming-specific text colors */
-  --text-card-name: var(--eva-bright-yellow);
-  --text-card-details: var(--eva-light-yellow);
-  --text-rarity-common: var(--eva-light-yellow);
-  --text-rarity-uncommon: var(--circuit-neon-blue);
-  --text-rarity-rare: var(--eva-magenta);
-  --text-rarity-holo: var(--circuit-rare-gold);
-  --text-condition-mint: var(--circuit-lime-green);
-  --text-condition-good: var(--eva-bright-yellow);
-  --text-condition-played: var(--circuit-orange);
-  --text-condition-damaged: #ff6b6b;
-  
-  /* D. Border Colors */
-  --border-default: var(--eva-light-teal);
-  --border-hover: var(--eva-bright-yellow);
-  --border-focus: var(--eva-magenta); 
-  --border-error: #ff3860;
-  --border-success: #257942;
-  --border-disabled: #365855;
-  --border-interactive-primary: var(--interactive-primary-pressed); 
-  --border-interactive-secondary: var(--eva-magenta);
-  
-  /* Gaming-specific borders */
-  --border-card-default: var(--eva-light-teal);
-  --border-card-hover: var(--eva-bright-yellow);
-  --border-card-selected: var(--eva-magenta);
-  --border-card-focus: var(--circuit-neon-blue);
-  --border-rarity-common: var(--eva-light-teal);
-  --border-rarity-uncommon: var(--circuit-neon-blue);
-  --border-rarity-rare: var(--eva-magenta);
-  --border-rarity-holo: var(--circuit-rare-gold);
-
-  /* E. Interactive Element Colors */
-  --interactive-primary: var(--eva-bright-yellow);
-  --interactive-primary-hover: #ffc759; 
-  --interactive-primary-pressed: #e6a62e; 
-  --interactive-primary-disabled: #7d6a3c; 
-  
-  --interactive-secondary: var(--eva-magenta);
-  --interactive-secondary-hover: #f04fa8; 
-  --interactive-secondary-pressed: #c71a53; 
-  --interactive-secondary-disabled: #733b50;
-  
-  /* Gaming-specific interactive colors */
-  --interactive-card-hover: var(--circuit-card-glow);
-  --interactive-card-press: rgba(255, 185, 53, 0.4);
-  --interactive-add-card: var(--circuit-lime-green);
-  --interactive-add-card-hover: #45ff20;
-  --interactive-delete-card: #ff6b6b;
-  --interactive-delete-card-hover: #ff5252;
-
-  /* F. Status Colors */
-  --status-error: #e74c3c;
-  --status-error-subtle: rgba(231, 76, 60, 0.15);
-  --status-success: #2ecc71;
-  --status-success-subtle: rgba(46, 204, 113, 0.15);
-  --status-warning: var(--eva-bright-yellow); 
-  --status-warning-subtle: rgba(255, 185, 53, 0.15);
-  --status-info: var(--eva-light-teal); 
-  --status-info-subtle: rgba(74, 155, 148, 0.15);
-  
-  /* Gaming-specific status colors */
-  --status-in-collection: var(--circuit-lime-green);
-  --status-in-collection-subtle: rgba(57, 255, 20, 0.15);
-  --status-missing: var(--circuit-orange);
-  --status-missing-subtle: rgba(255, 107, 53, 0.15);
-  --status-trading: var(--circuit-neon-blue);
-  --status-trading-subtle: rgba(0, 212, 255, 0.15);
-
-  /* G. Focus Indicator Colors */
-  --focus-ring: var(--eva-magenta);
-  --focus-ring-card: var(--circuit-neon-blue);
-
-  /* H. Overlay Colors */
-  --overlay-background: rgba(15, 43, 41, 0.85); 
-  --overlay-hover: rgba(15, 43, 41, 0.95);
-  --overlay-modal: rgba(15, 43, 41, 0.92);
-
-  /* I. Semantic Typography Tokens (Circuit theme overrides these) */
-  --font-title-hero: 700 64px/1.2 var(--font-monda), sans-serif;
-  --font-title-page: 700 42px/1.2 var(--font-monda), sans-serif;
-  --font-subtitle: 400 28px/1.2 var(--font-monda), sans-serif;
-  --letter-spacing-title-hero: -3%;  /* Added for completeness, from :root */
-  --letter-spacing-title-page: -2%; /* Added for completeness, from :root */
-  --font-heading: 600 21px/1.2 var(--font-monda), sans-serif;
-  --font-subheading: 400 18px/1.2 var(--font-monda), sans-serif;
-  --letter-spacing-heading: -2%;    /* Added for completeness, from :root */
-  --font-body-base: 400 15px/1.4 var(--font-monda), sans-serif;
-  --font-body-strong: 600 15px/1.4 var(--font-monda), sans-serif;
-  --font-body-small: 400 13px/1.4 var(--font-monda), sans-serif;
-  --font-body-small-strong: 600 13px/1 var(--font-monda), sans-serif;
-  --font-body-code: 400 16px/1 var(--font-roboto-mono), monospace; /* Circuit uses default Roboto Mono for code */
-  --font-input: 400 15px/1 var(--font-monda), sans-serif;
-  --font-body-base-single: 400 15px/1 var(--font-monda), sans-serif;
-  --font-body-small-strong-single: 600 13px/1 var(--font-monda), sans-serif;
-  
-  /* Gaming-specific typography */
-  --font-card-name: 600 16px/1.2 var(--font-monda), sans-serif;
-  --font-card-details: 400 13px/1.3 var(--font-monda), sans-serif;
-  --font-card-stats: 600 12px/1.2 var(--font-roboto-mono), monospace;
-  --font-rarity-badge: 700 11px/1 var(--font-monda), sans-serif;
-  --font-condition-badge: 500 10px/1 var(--font-monda), sans-serif;
-}
+.m-1 { margin: var(--space-1); }
+.m-2 { margin: var(--space-2); }
+.m-4 { margin: var(--space-4); }
