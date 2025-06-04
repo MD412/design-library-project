@@ -13,14 +13,14 @@ const themes = [
   {
     id: 'dark',
     name: 'Dark theme',
-    topColor: '#2c2c2c', // Dark gray
-    bottomColor: '#444444' // Medium gray
+    topColor: '#1f2937', // Dark background from dark theme
+    bottomColor: '#111827' // Even darker for contrast
   },
   {
     id: 'high-contrast',
     name: 'High contrast theme',
-    topColor: '#0c0c0d', // Black
-    bottomColor: '#1e1e1e' // Dark gray
+    topColor: '#000000', // Pure black for maximum contrast
+    bottomColor: '#ffffff' // Pure white for maximum contrast
   },
   {
     id: 'circuit',

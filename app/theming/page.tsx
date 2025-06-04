@@ -99,7 +99,7 @@ export default function ThemingDocumentationPage() {
       description="Understanding the design token strategy and how themes are structured in this design system."
     >
       <DocsSection title="Overview">
-        <p>
+        <p className="body-base">
           This design system employs a flexible theming architecture built upon CSS custom properties (variables).
           It allows for multiple themes that can control colors, typography, and other visual aspects of components
           consistently across the application.
@@ -107,7 +107,7 @@ export default function ThemingDocumentationPage() {
       </DocsSection>
 
       <DocsSection title="Live Theme Demo">
-        <p>
+        <p className="body-base">
           Use the theme switcher below to see how all components adapt dynamically to different themes.
           Notice how semantic tokens provide consistent behavior while primitive tokens change the visual appearance.
         </p>
@@ -135,20 +135,83 @@ function MyComponent() {
       </DocsSection>
 
       <DocsSection title="Design Token Philosophy">
-        <p>
-          Our design tokens are organized in a two-layer structure:
+        <p className="body-base">
+          Our design tokens follow a carefully structured hierarchy that separates primitive values from their semantic usage.
+          This separation allows for maximum flexibility when creating new themes while maintaining consistency across the application.
         </p>
+        
+        <h3>Token Architecture</h3>
         <ul className={styles.featureList}>
           <li>
-            <strong>Primitive Tokens:</strong> Raw, uncontextual values (e.g., <code>--color-blue-500: #3B82F6</code>)
+            <strong>Primitive Tokens:</strong> Raw, uncontextual values that form our base palette
+            <ul>
+              <li>Color scales (e.g., <code>--color-blue-500: #3B82F6</code>)</li>
+              <li>Never used directly in components</li>
+              <li>Defined once, remain constant across themes</li>
+            </ul>
           </li>
           <li>
-            <strong>Semantic Tokens:</strong> Contextual application of primitives (e.g., <code>--text-interactive: var(--color-blue-500)</code>)
+            <strong>Semantic Tokens:</strong> The "Theme Contract" - contextual usage of primitives
+            <ul>
+              <li>Map primitives to their usage (e.g., <code>--text-primary: var(--color-gray-900)</code>)</li>
+              <li>Only tokens that components should use</li>
+              <li>Redefined by each theme</li>
+            </ul>
           </li>
         </ul>
-        <p>
-          This approach allows us to maintain consistency while providing flexibility for different themes.
-          Components should <strong>only use semantic tokens</strong> to ensure they work across all themes.
+
+        <h3>File Structure</h3>
+        <pre className={styles.codeBlock}>
+{`app/styles/
+├── tokens/
+│   ├── primitives/
+│   │   └── colors.css      # Raw color values
+│   └── semantic/
+│       └── colors.css      # Usage-based tokens
+└── themes/
+    ├── dark.css           # Dark theme overrides
+    ├── high-contrast.css  # High contrast theme
+    └── circuit.css        # Custom theme`}
+        </pre>
+      </DocsSection>
+
+      <DocsSection title="Creating a New Theme">
+        <p className="body-base">
+          Adding a new theme is straightforward thanks to our semantic token architecture. Here's the process:
+        </p>
+        
+        <ol className={styles.stepsList}>
+          <li>
+            <strong>Create Theme File:</strong>
+            <p>Add a new CSS file in the <code>app/styles/themes/</code> directory.</p>
+          </li>
+          <li>
+            <strong>Import Semantic Tokens:</strong>
+            <p>Import the semantic token definitions to ensure you're overriding all necessary variables.</p>
+            <pre className={styles.codeBlock}>
+              {`@import '../tokens/semantic/colors.css';`}
+            </pre>
+          </li>
+          <li>
+            <strong>Define Theme Overrides:</strong>
+            <p>Override semantic tokens using primitive values:</p>
+            <pre className={styles.codeBlock}>
+              {`[data-theme='my-theme'] {
+  --surface-background: var(--color-gray-900);
+  --text-primary: var(--color-gray-50);
+  /* Override all semantic tokens */
+}`}
+            </pre>
+          </li>
+          <li>
+            <strong>Register Theme:</strong>
+            <p>Add the theme to the theme switcher component.</p>
+          </li>
+        </ol>
+
+        <p className="body-base important">
+          Important: Components should ONLY use semantic tokens. This ensures they automatically work with any new theme
+          without requiring changes to the component code.
         </p>
       </DocsSection>
 
@@ -259,7 +322,7 @@ function MyComponent() {
       </DocsSection>
 
       <DocsSection title="Semantic Token Reference">
-        <p>
+        <p className="body-base">
           All components should use these semantic tokens to ensure theme compatibility. 
           Never reference primitive tokens directly in component styles.
         </p>
@@ -435,7 +498,7 @@ function MyComponent() {
       </DocsSection>
 
       <DocsSection title="Accessibility Considerations">
-        <p>
+        <p className="body-base">
           Each theme is designed with accessibility in mind:
         </p>
         <ul className={styles.featureList}>
@@ -466,7 +529,7 @@ function MyComponent() {
       </DocsSection>
 
       <DocsSection title="Creating Custom Themes">
-        <p>
+        <p className="body-base">
           To create a new theme, define all semantic tokens within a <code>[data-theme='your-theme']</code> selector:
         </p>
         
