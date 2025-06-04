@@ -1,10 +1,11 @@
 /* Gaming Demo Page Styles */
 
 .dashboard {
-  background: var(--surface-background);
-  border-radius: var(--sds-size-radius-200);
-  padding: var(--sds-size-space-600);
-  border: var(--sds-size-stroke-border) solid var(--border-default);
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  border: none;
 }
 
 .dashboardHeader {
@@ -28,17 +29,110 @@
   min-width: 120px;
 }
 
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--sds-size-space-600);
+  padding: var(--sds-size-space-400);
+}
+
+.cardItem {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface-card-background);
+  border: var(--sds-size-stroke-border) solid var(--border-card-default);
+  border-radius: var(--sds-size-radius-200);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.cardItem:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  border-color: var(--border-card-hover);
+}
+
+.cardImageWrapper {
+  position: relative;
+  width: 100%;
+  border-radius: var(--sds-size-radius-100);
+  overflow: hidden;
+  aspect-ratio: 0.71428571; /* Standard Pokemon card ratio */
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--sds-size-radius-100);
+  transition: transform 0.3s ease;
+}
+
+.cardItem:hover .cardImage {
+  transform: scale(1.02);
+}
+
+.rarityIndicator {
+  position: absolute;
+  top: var(--sds-size-space-200);
+  right: var(--sds-size-space-200);
+  padding: var(--sds-size-space-100) var(--sds-size-space-200);
+  background: rgba(255, 215, 0, 0.2);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 215, 0, 0.4);
+  border-radius: var(--sds-size-radius-full);
+  color: var(--text-rarity-holo);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
+}
+
 .cardContent {
   display: flex;
   flex-direction: column;
   gap: var(--sds-size-space-200);
+  padding: var(--sds-size-space-300);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--sds-size-space-200);
+}
+
+.cardNumber {
+  color: var(--text-secondary);
+}
+
+.cardSetDivider {
+  margin: 0 var(--sds-size-space-200);
+  color: var(--text-tertiary);
+}
+
+.cardSet {
+  color: var(--text-secondary);
+}
+
+.cardPower {
+  display: flex;
+  gap: var(--sds-size-space-200);
+  align-items: center;
+  padding: var(--sds-size-space-100) var(--sds-size-space-200);
+  background: var(--surface-background-subtle);
+  border-radius: var(--sds-size-radius-100);
+  font-size: 0.9em;
 }
 
 .cardMeta {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: var(--sds-size-space-300);
+  margin-top: var(--sds-size-space-200);
+  padding-top: var(--sds-size-space-200);
+  border-top: var(--sds-size-stroke-border) solid var(--border-default);
 }
 
 /* Rarity Showcase */
@@ -174,7 +268,7 @@
   line-height: 1.4;
 }
 
-/* Responsive Design */
+/* Responsive adjustments */
 @media (max-width: 768px) {
   .dashboard {
     padding: var(--sds-size-space-400);
@@ -205,5 +299,10 @@
   
   .integrationGuide {
     grid-template-columns: 1fr;
+  }
+  
+  .cardGrid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--sds-size-space-400);
   }
 } 
